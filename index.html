@@ -9,6 +9,44 @@
 </head>
 
 <body>
+  <!-- Start Page / Welcome Screen -->
+  <div class="start-page" id="startPage">
+    <div class="start-content">
+      <div class="profile-container">
+        <!-- Profile circle removed for cleaner look -->
+      </div>
+      
+      <div class="welcome-text">
+        <h1 class="welcome-title">Welcome to</h1>
+        <h2 class="portfolio-owner">Navingna Reddy Gangumalla's</h2>
+        <h3 class="portfolio-subtitle">Interactive Portfolio</h3>
+        
+        <div class="achievement-badges">
+          <button class="badge" onclick="enterPortfolioSection('education')">4.0 GPA</button>
+          <button class="badge" onclick="enterPortfolioSection('projects')">Hackathon Winner</button>
+          <button class="badge" onclick="enterPortfolioSection('skills')">AWS Certified</button>
+          <button class="badge" onclick="enterPortfolioSection('projects')">Full-Stack Developer</button>
+        </div>
+        
+        <div class="start-buttons">
+          <button class="start-btn primary" onclick="enterPortfolio()">
+            <span class="btn-text">Enter Portfolio</span>
+          </button>
+        </div>
+
+      </div>
+      
+      <div class="floating-elements">
+        <div class="floating-icon" style="--delay: 0s">{ }</div>
+        <div class="floating-icon" style="--delay: 1s">CODE</div>
+        <div class="floating-icon" style="--delay: 2s">&lt;/&gt;</div>
+        <div class="floating-icon" style="--delay: 3s">API</div>
+        <div class="floating-icon" style="--delay: 4s">DEV</div>
+        <div class="floating-icon" style="--delay: 5s">SWE</div>
+      </div>
+    </div>
+  </div>
+
   <header class="header">
     <h1>navingnareddy@portfolio:~$</h1>
     <div class="status">
@@ -21,9 +59,11 @@
     <div class="terminal-container" id="terminalContainer">
       <div class="terminal-window">
         <div class="terminal-header">
-          <div class="terminal-btn close"></div>
-          <div class="terminal-btn minimize"></div>
-          <div class="terminal-btn maximize"></div>
+          <div class="terminal-buttons">
+            <div class="terminal-btn close"></div>
+            <div class="terminal-btn minimize"></div>
+            <div class="terminal-btn maximize"></div>
+          </div>
           <span class="terminal-title">Portfolio Terminal</span>
         </div>
         <div class="terminal-body">
@@ -33,39 +73,41 @@
             </div>
 
                           <div class="quick-options">
-                <button class="quick-option" onclick="executeCommand('start')">📄 Resume</button>
-                <button class="quick-option" onclick="executeCommand('ls')">📁 Sections</button>
-                <button class="quick-option" onclick="executeCommand('cd projects')">💻 Projects</button>
-                <button class="quick-option" onclick="executeCommand('cd skills')">🛠️ Skills</button>
-                <button class="quick-option" onclick="executeCommand('cd leadership')">🏛️ Leadership</button>
-                <button class="quick-option" onclick="executeCommand('ai chat')">🤖 AI Chat</button>
+                <button class="quick-option" onclick="executeCommand('start')">Resume</button>
+                <button class="quick-option" onclick="executeCommand('ls')">Sections</button>
+                <button class="quick-option" onclick="executeCommand('cd projects')">Projects</button>
+                <button class="quick-option" onclick="executeCommand('cd skills')">Skills</button>
+                <button class="quick-option" onclick="executeCommand('cd leadership')">Leadership</button>
+                <button class="quick-option" onclick="executeCommand('ai chat')">AI Chat</button>
               </div>
 
             <div class="examples-section">
-              <div class="examples-title">💡 AI-Powered Commands (click to try):</div>
-              <span class="example-command" onclick="executeCommand('ai strengths')">ai strengths</span>
-              <span class="example-command" onclick="executeCommand('ai fit for google')">ai fit for google</span>
-              <span class="example-command" onclick="executeCommand('ai compare peers')">ai compare peers</span>
-              <span class="example-command" onclick="executeCommand('ai best projects')">ai best projects</span>
+              <div class="examples-title">Example Commands (click to try):</div>
               <span class="example-command" onclick="executeCommand('cd about')">cd about</span>
+              <span class="example-command" onclick="executeCommand('cd projects')">cd projects</span>
+              <span class="example-command" onclick="executeCommand('cd skills')">cd skills</span>
+              <span class="example-command" onclick="executeCommand('cd experience')">cd experience</span>
+              <span class="example-command" onclick="executeCommand('cd leadership')">cd leadership</span>
+              <span class="example-command" onclick="executeCommand('ls')">ls</span>
+              <span class="example-command" onclick="executeCommand('help')">help</span>
             </div>
 
             <div class="terminal-line">
-              <span class="output info">🤖 Advanced AI trained on portfolio data - ask complex questions!</span>
+              <span class="output info">Advanced AI trained on portfolio data - ask complex questions!</span>
             </div>
             <div class="terminal-line">
               <span class="output">────────────────────────────────────────────────</span>
             </div>
 
             <div class="typing-indicator" id="typingIndicator">
-              🤖 AI analyzing... <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+              AI analyzing... <div class="dot"></div><div class="dot"></div><div class="dot"></div>
             </div>
           </div>
 
           <div class="terminal-input-line">
             <span class="prompt">~$</span>
             <input type="text" class="terminal-input" id="commandInput" placeholder="Type command or ask AI..." autofocus>
-            <button class="ai-button" onclick="openAIChat()">🤖 Chat</button>
+            <button class="ai-button" onclick="openAIChat()">Chat</button>
           </div>
         </div>
       </div>
@@ -144,24 +186,24 @@
               </ul>
             </div>
             <div class="content-card">
-              <h3>🏆 Awards & Honors</h3>
+              <h3>Awards & Honors</h3>
               <ul>
-                <li>🏅 Dean's List – Spring 2023, Fall 2023, Spring 2024, Fall 2024, Spring 2025</li>
-                <li>🎓 New American University Scholarship – $14,500/year (2023–2026)</li>
-                <li>🛰️ Garmin Scholarship Fund – $8,000/year (2024–2026)</li>
-                <li>🥇 Hackathon Winner – OpenAI Challenge, ASU AI Challenge, PIA Hacks</li>
-                <li>💎 BAL PURASKAR Award – Rotary Club International</li>
-                <li>🧭 Officer of the Year Award – Connecting International Communities</li>
+                <li>Dean's List – Spring 2023, Fall 2023, Spring 2024, Fall 2024, Spring 2025</li>
+                <li>New American University Scholarship – $14,500/year (2023–2026)</li>
+                <li>Garmin Scholarship Fund – $8,000/year (2024–2026)</li>
+                <li>Hackathon Winner – OpenAI Challenge, ASU AI Challenge, PIA Hacks</li>
+                <li>BAL PURASKAR Award – Rotary Club International</li>
+                <li>Officer of the Year Award – Connecting International Communities</li>
               </ul>
             </div>
             <div class="content-card">
-              <h3>📜 Certifications</h3>
+              <h3>Certifications</h3>
               <ul>
-                <li>✅ AWS Certified Solutions Architect – Associate (July 2025)</li>
-                <li>✅ AWS Certified Cloud Practitioner (May 2025)</li>
-                <li>✅ MATLAB Onramp (MathWorks) – Mar 2025</li>
-                <li>✅ CITI Human Research – IRB Group 2 – Valid until Jan 2029</li>
-                <li>✅ PI Academy Spring 2025 – Arizona State University</li>
+                <li>AWS Certified Solutions Architect – Associate (July 2025)</li>
+                <li>AWS Certified Cloud Practitioner (May 2025)</li>
+                <li>MATLAB Onramp (MathWorks) – Mar 2025</li>
+                <li>CITI Human Research – IRB Group 2 – Valid until Jan 2029</li>
+                <li>PI Academy Spring 2025 – Arizona State University</li>
               </ul>
             </div>
           </div>
@@ -237,9 +279,9 @@
               </ul>
             </div>
             <div class="content-card">
-              <h3>🏆 AI Challenge: Ethical Policy Simulation Game</h3>
+              <h3>AI Challenge: Ethical Policy Simulation Game</h3>
               <p><strong>Tech Stack:</strong> React.js, Node.js, Tailwind CSS, Web Speech API, GPT-3.5, AWS SES</p>
-              <p><strong>Duration:</strong> March 2025 - April 2025 | <strong>🥇 Winner - OpenAI Challenge</strong></p>
+              <p><strong>Duration:</strong> March 2025 - April 2025 | <strong>Winner - OpenAI Challenge</strong></p>
               <p>Architected a browser-based simulation engaging 200+ users in refugee-education budgeting under a 14-unit constraint, improving decision quality by 35%.</p>
               <ul>
                 <li>Integrated multimodal UX (voice/text via Web Speech API) and GPT-3.5 agent dialogue with real-time WebSocket voting, boosting session engagement by 50%</li>
@@ -312,18 +354,18 @@
           <h2 class="section-header">Leadership & Organizations</h2>
           <div class="content-grid">
             <div class="content-card">
-              <h3>🏛️ Connecting International Communities</h3>
+              <h3>Connecting International Communities</h3>
               <p><strong>Treasurer</strong> | December 2024 - May 2025</p>
               <p><strong>Secretary</strong> | June 2024 - May 2025</p>
               <ul>
                 <li>Manage CIC's financial operations, including budgeting, expense tracking, and fund allocation</li>
                 <li>Facilitate communication and collaboration between international communities, promoting cultural exchange</li>
                 <li>Organized and coordinated in-person events, fostering global networking opportunities</li>
-                <li>🧭 Recipient: Officer of the Year Award</li>
+                <li>Recipient: Officer of the Year Award</li>
               </ul>
             </div>
             <div class="content-card">
-              <h3>🇮🇳 Indian Student Association</h3>
+              <h3>Indian Student Association</h3>
               <p><strong>Officer - Public Relations/Technology</strong> | August 2023 - December 2023</p>
               <ul>
                 <li>Developed strategic communication plans to enhance organization visibility</li>
@@ -333,7 +375,7 @@
               </ul>
             </div>
             <div class="content-card">
-              <h3>🎓 ASU 101 - Section Leader</h3>
+              <h3>ASU 101 - Section Leader</h3>
               <p><strong>Ira A. Fulton Schools of Engineering</strong> | August 2023 - December 2023</p>
               <ul>
                 <li>Assisted in creating course materials such as lecture notes, quizzes, and exams</li>
@@ -343,13 +385,13 @@
               </ul>
             </div>
             <div class="content-card">
-              <h3>🔄 Interact Club</h3>
+              <h3>Interact Club</h3>
               <p><strong>Director - Community Service</strong> | April 2018 - February 2019</p>
               <p><strong>Treasurer</strong> | April 2017 - February 2018</p>
               <ul>
                 <li>Initiated and oversaw diverse community service projects including food drives and environmental clean-ups</li>
                 <li>Managed club finances, budgeting, tracking expenses, and financial reporting</li>
-                <li>🏆 Received the Rotary Youth Leadership Award (RYLA) for excellence as an Interactor</li>
+                <li>Received the Rotary Youth Leadership Award (RYLA) for excellence as an Interactor</li>
               </ul>
             </div>
           </div>
@@ -377,7 +419,7 @@
               </ul>
               <br>
               <button onclick="downloadResume()" class="resume-btn" style="background: linear-gradient(135deg, #4285f4, #34a853); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
-                📄 Download Resume PDF
+                Download Resume PDF
               </button>
             </div>
             <div class="content-card">
@@ -394,30 +436,176 @@
     </div>
   </main>
 
+  <!-- Swipe Up Indicator -->
+  <div class="swipe-indicator" id="swipeIndicator">
+    <div class="swipe-text">Swipe up for traditional portfolio</div>
+    <div class="swipe-arrow">↑</div>
+  </div>
+
+  <!-- Traditional Portfolio -->
+  <div class="traditional-portfolio" id="traditionalPortfolio">
+    <div class="portfolio-header">
+      <button class="close-traditional" onclick="closeTraditionalPortfolio()">×</button>
+      <div class="swipe-up-indicator">Swipe down to return to terminal</div>
+    </div>
+
+    <div class="portfolio-content">
+      <!-- Profile Section -->
+      <section class="portfolio-section">
+        <div class="profile-section">
+          <h1 class="profile-name">Navingna Reddy Gangumalla</h1>
+          <p class="profile-title">Computer Science Student & Full-Stack Developer</p>
+          <p class="profile-description">
+            Motivated Computer Science student at Arizona State University with a perfect 4.0 GPA. 
+            Multiple-time hackathon winner with proven expertise in full-stack development, cloud technologies, and XR/VR systems.
+          </p>
+          
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">4.0</div>
+              <div class="stat-label">GPA</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">7000+</div>
+              <div class="stat-label">Weekly XR Users</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">100+</div>
+              <div class="stat-label">Students Taught</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">$22,500+</div>
+              <div class="stat-label">Scholarships</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="portfolio-section">
+        <h2>Technical Skills</h2>
+        <div class="skills-showcase">
+          <div class="skill-category">
+            <div class="skill-icon">💻</div>
+            <h4>Programming</h4>
+            <p>Python, Java, JavaScript, TypeScript, C++, C, C#, SQL</p>
+          </div>
+          <div class="skill-category">
+            <div class="skill-icon">🌐</div>
+            <h4>Web Development</h4>
+            <p>React.js, Angular, Node.js, Express, HTML5, CSS3, Tailwind</p>
+          </div>
+          <div class="skill-category">
+            <div class="skill-icon">☁️</div>
+            <h4>Cloud & DevOps</h4>
+            <p>AWS (Lambda, S3, EC2, RDS), Docker, Jenkins, Azure</p>
+          </div>
+          <div class="skill-category">
+            <div class="skill-icon">📱</div>
+            <h4>Mobile & App</h4>
+            <p>Flutter, Swift, Kotlin, React Native, Android Studio</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="portfolio-section">
+        <h2>Featured Projects</h2>
+        <div class="portfolio-grid two-col">
+          <div class="portfolio-card featured">
+            <h3>AI Challenge: Ethical Policy Simulation Game</h3>
+            <p><strong>Winner - OpenAI Challenge</strong></p>
+            <p>Architected a browser-based simulation engaging 200+ users in refugee-education budgeting, improving decision quality by 35%.</p>
+            <ul>
+              <li>React.js, Node.js, GPT-3.5, AWS SES</li>
+              <li>Multimodal UX with Web Speech API</li>
+              <li>Real-time WebSocket voting system</li>
+            </ul>
+          </div>
+          <div class="portfolio-card">
+            <h3>Biking Paths Finder</h3>
+            <p>Full-stack web application for cyclists with personalized route optimization.</p>
+            <ul>
+              <li>FastAPI, GraphQL, MongoDB</li>
+              <li>Google Maps Platform integration</li>
+              <li>OAuth 2.0 authentication</li>
+            </ul>
+          </div>
+          <div class="portfolio-card">
+            <h3>Scalable Content Delivery System</h3>
+            <p>Docker containerized microservices system for concurrent user requests.</p>
+            <ul>
+              <li>Java, Spring Boot, Redis, PostgreSQL</li>
+              <li>AWS EC2 & S3 deployment</li>
+              <li>Performance monitoring dashboard</li>
+            </ul>
+          </div>
+          <div class="portfolio-card">
+            <h3>Real-Time Study Group Platform</h3>
+            <p>Collaborative platform supporting 50+ concurrent users with WebSocket connections.</p>
+            <ul>
+              <li>React, Node.js, Socket.io, WebRTC</li>
+              <li>Live document sharing</li>
+              <li>Video chat functionality</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="portfolio-section">
+        <h2>Get In Touch</h2>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">📧</div>
+            <h4>Email</h4>
+            <p>nganguma@asu.edu</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">💼</div>
+            <h4>LinkedIn</h4>
+            <p>linkedin.com/in/navignareddy</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">💻</div>
+            <h4>GitHub</h4>
+            <p>github.com/navignareddy</p>
+          </div>
+        </div>
+        
+        <div class="resume-download">
+          <button class="resume-btn" onclick="downloadResume()">
+            Download Resume PDF
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+
   <!-- AI Chat Modal -->
   <div class="ai-modal" id="aiModal">
     <div class="ai-chat-window">
       <div class="ai-chat-header">
-        <div class="ai-chat-title">🤖 Advanced AI Portfolio Assistant</div>
+        <div class="ai-chat-title">Advanced AI Portfolio Assistant</div>
         <button class="close-ai" onclick="closeAIChat()">×</button>
       </div>
       <div class="ai-chat-body" id="aiChatBody">
         <div class="ai-message ai">
-          <div class="ai-header">🤖 Hi! I'm Navingna's AI Assistant</div>
+          <div class="ai-header">Hi! I'm Navingna's AI Assistant</div>
           I can help you learn more about Navingna Reddy Gangumalla! Click on any topic below or ask me anything:<br><br>
           
           <div class="ai-quick-topics">
-            <button class="ai-topic-btn" onclick="askAI('Tell me about Navingna\'s achievements')">🏆 Achievements & Awards</button>
-            <button class="ai-topic-btn" onclick="askAI('What are Navingna\'s technical skills?')">💻 Technical Skills</button>
-            <button class="ai-topic-btn" onclick="askAI('Show me Navingna\'s best projects')">🚀 Featured Projects</button>
-            <button class="ai-topic-btn" onclick="askAI('What leadership roles has Navingna held?')">🏛️ Leadership Experience</button>
-            <button class="ai-topic-btn" onclick="askAI('Tell me about Navingna\'s hackathon wins')">🥇 Hackathon Victories</button>
-            <button class="ai-topic-btn" onclick="askAI('What makes Navingna unique?')">⭐ What Makes Him Unique</button>
-            <button class="ai-topic-btn" onclick="askAI('What are Navingna\'s career goals?')">🎯 Career Aspirations</button>
-            <button class="ai-topic-btn" onclick="askAI('How can I contact Navingna?')">📞 Contact Information</button>
+            <button class="ai-topic-btn" onclick="askAI('Tell me about Navingna\'s achievements')">Achievements & Awards</button>
+            <button class="ai-topic-btn" onclick="askAI('What are Navingna\'s technical skills?')">Technical Skills</button>
+            <button class="ai-topic-btn" onclick="askAI('Show me Navingna\'s best projects')">Featured Projects</button>
+            <button class="ai-topic-btn" onclick="askAI('What leadership roles has Navingna held?')">Leadership Experience</button>
+            <button class="ai-topic-btn" onclick="askAI('Tell me about Navingna\'s hackathon wins')">Hackathon Victories</button>
+            <button class="ai-topic-btn" onclick="askAI('What makes Navingna unique?')">What Makes Her Unique</button>
+            <button class="ai-topic-btn" onclick="askAI('What are Navingna\'s career goals?')">Career Aspirations</button>
+            <button class="ai-topic-btn" onclick="askAI('How can I contact Navingna?')">Contact Information</button>
           </div>
           
-          <br>Or type your own question about Navingna below! 👇
+          <br>Or type your own question about Navingna below!
         </div>
       </div>
                 <div class="ai-input-area">

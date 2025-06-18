@@ -8,6 +8,7 @@ const aiChatBody = document.getElementById('aiChatBody');
 const aiInput = document.getElementById('aiInput');
 const terminalContainer = document.getElementById('terminalContainer');
 const contentContainer = document.getElementById('contentContainer');
+const startPage = document.getElementById('startPage');
 
 // Structured portfolio database (data for AI responses)
 const portfolioDatabase = {
@@ -473,7 +474,7 @@ function generateAdvancedAIResponse(query) {
       <div class="ai-section">
         <div class="ai-section-title">💡 Sample Advanced Queries</div>
         <div class="ai-metric">"ai analyze readiness for senior engineer role"</div>
-        <div class="ai-metric">"ai what's john's competitive advantage"</div>
+        <div class="ai-metric">"ai what's navingna's competitive advantage"</div>
         <div class="ai-metric">"ai best projects to highlight for [company]"</div>
         <br>I provide <span class="ai-highlight">strategic insights with specific metrics</span> based on comprehensive portfolio analysis.
       </div>
@@ -487,10 +488,10 @@ function generateAdvancedAIResponse(query) {
     <div class="ai-section">
       <div class="ai-section-title">💡 Try These Sophisticated Queries</div>
       <ul class="ai-list">
-        <li>"ai analyze john's readiness for [specific role]"</li>
-        <li>"ai what's john's competitive advantage"</li>
+        <li>"ai analyze navingna's readiness for [specific role]"</li>
+        <li>"ai what's navingna's competitive advantage"</li>
         <li>"ai best projects to highlight for [company]"</li>
-        <li>"ai compare john to typical product manager candidates"</li>
+        <li>"ai compare navingna to typical product manager candidates"</li>
         <li>"ai startup founder potential assessment"</li>
       </ul>
       <br>I can provide <span class="ai-highlight">detailed strategic analysis</span> with specific metrics and recommendations.
@@ -709,10 +710,7 @@ aiModal.addEventListener('click', e => {
   if (e.target === aiModal) closeAIChat();
 });
 
-// Init message
-setTimeout(() => {
-  addToOutput('', '✨ Advanced AI portfolio system initialized. Comprehensive analysis ready!');
-}, 1000);
+// This init message is now handled by the start page functionality
 
 // Traditional portfolio toggles & download
 function openTraditionalPortfolio() {
@@ -725,7 +723,7 @@ function closeTraditionalPortfolio() {
 }
 function downloadResume() {
   // Link to the actual resume PDF
-  window.open('https://drive.google.com/file/d/1Z4b6BQ-DHIVJ7PByUeIXYmazTllbnQXr/view?usp=sharing', '_blank');
+  window.open('https://docs.google.com/document/d/1dPYONY_o3NWheQMsZnYy4uwJZHJ_ktWs/edit?usp=sharing&ouid=113037602875858214346&rtpof=true&sd=true', '_blank');
 }
 
 // Swipe & wheel gestures
@@ -771,17 +769,64 @@ document.addEventListener('keydown', e => {
   }
 });
 
-// Auto-hide swipe indicator
+// Auto-hide swipe indicator and add click functionality
 setTimeout(() => {
   const ind = document.getElementById('swipeIndicator');
   if (ind) ind.style.opacity = '0.7';
 }, 5000);
-document.getElementById('swipeIndicator').addEventListener('mouseenter', function() {
-  this.style.opacity = '1';
-});
-document.getElementById('swipeIndicator').addEventListener('mouseleave', function() {
-  this.style.opacity = '0.7';
+
+const swipeIndicator = document.getElementById('swipeIndicator');
+if (swipeIndicator) {
+  swipeIndicator.addEventListener('mouseenter', function() {
+    this.style.opacity = '1';
+  });
+  swipeIndicator.addEventListener('mouseleave', function() {
+    this.style.opacity = '0.7';
+  });
+  swipeIndicator.addEventListener('click', function() {
+    openTraditionalPortfolio();
+  });
+}
+
+// Start Page Functionality
+function enterPortfolio() {
+  startPage.classList.add('hidden');
+  setTimeout(() => {
+    startPage.style.display = 'none';
+input.focus();
+    // Add welcome message to terminal
+    setTimeout(() => {
+      addToOutput('', 'Welcome to Navingna\'s Interactive Portfolio! Type "help" to get started or try the quick options above.');
+    }, 500);
+  }, 1000);
+}
+
+// Start page event listeners
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !startPage.classList.contains('hidden')) {
+    enterPortfolio();
+  }
 });
 
-// Initial focus
-input.focus();
+startPage.addEventListener('click', (e) => {
+  if (!startPage.classList.contains('hidden')) {
+    enterPortfolio();
+  }
+});
+
+// Initial setup - hide main content until start page is dismissed
+document.querySelector('.header').style.display = 'none';
+document.querySelector('.main-container').style.display = 'none';
+
+// Show main content after start page
+function showMainContent() {
+  document.querySelector('.header').style.display = 'flex';
+  document.querySelector('.main-container').style.display = 'flex';
+}
+
+// Override the enter portfolio function to show main content
+const originalEnterPortfolio = enterPortfolio;
+enterPortfolio = function() {
+  showMainContent();
+  originalEnterPortfolio();
+};
