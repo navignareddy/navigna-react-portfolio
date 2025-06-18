@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navingna Reddy Gangumalla | Interactive Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+  <header class="header">
+    <h1>navingnareddy@portfolio:~$</h1>
+    <div class="status">
+      <div class="ai-indicator"></div>
+      AI Enhanced | Ready
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="terminal-container" id="terminalContainer">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-btn close"></div>
+          <div class="terminal-btn minimize"></div>
+          <div class="terminal-btn maximize"></div>
+          <span class="terminal-title">Portfolio Terminal</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-output" id="output">
+            <div class="friendly-message">
+              Welcome to Navingna Reddy Gangumalla's Interactive Portfolio System!<br>
+            </div>
+
+                          <div class="quick-options">
+                <button class="quick-option" onclick="executeCommand('start')">📄 Resume</button>
+                <button class="quick-option" onclick="executeCommand('ls')">📁 Sections</button>
+                <button class="quick-option" onclick="executeCommand('cd projects')">💻 Projects</button>
+                <button class="quick-option" onclick="executeCommand('cd skills')">🛠️ Skills</button>
+                <button class="quick-option" onclick="executeCommand('cd leadership')">🏛️ Leadership</button>
+                <button class="quick-option" onclick="executeCommand('ai chat')">🤖 AI Chat</button>
+              </div>
+
+            <div class="examples-section">
+              <div class="examples-title">💡 AI-Powered Commands (click to try):</div>
+              <span class="example-command" onclick="executeCommand('ai strengths')">ai strengths</span>
+              <span class="example-command" onclick="executeCommand('ai fit for google')">ai fit for google</span>
+              <span class="example-command" onclick="executeCommand('ai compare peers')">ai compare peers</span>
+              <span class="example-command" onclick="executeCommand('ai best projects')">ai best projects</span>
+              <span class="example-command" onclick="executeCommand('cd about')">cd about</span>
+            </div>
+
+            <div class="terminal-line">
+              <span class="output info">🤖 Advanced AI trained on portfolio data - ask complex questions!</span>
+            </div>
+            <div class="terminal-line">
+              <span class="output">────────────────────────────────────────────────</span>
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">
+              🤖 AI analyzing... <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+          </div>
+
+          <div class="terminal-input-line">
+            <span class="prompt">~$</span>
+            <input type="text" class="terminal-input" id="commandInput" placeholder="Type command or ask AI..." autofocus>
+            <button class="ai-button" onclick="openAIChat()">🤖 Chat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-container" id="contentContainer">
+      <div class="content-wrapper">
+        <button class="close-content" onclick="closeContent()">×</button>
+
+        <!-- ABOUT -->
+        <section class="content-section" id="about">
+          <h2 class="section-header">About Me</h2>
+          <div class="content-grid">
+            <div class="content-card">
+              <h3>Professional Summary</h3>
+              <p>Motivated Computer Science student at Arizona State University with a perfect 4.0 GPA and business minor. Multiple-time hackathon winner with proven expertise in full-stack development, cloud technologies, and XR/VR systems.</p>
+              <p>Currently serving as Teaching Assistant, Appropriations Chair in Student Government, and XR Pod Operator managing 7,000+ weekly users. AWS certified with extensive experience in enterprise software development and educational technology.</p>
+            </div>
+            <div class="content-card">
+              <h3>Currently Working On</h3>
+              <ul>
+                <li>Teaching Software Engineering to 100+ students</li>
+                <li>Leading Travel & Professional Development funding decisions</li>
+                <li>Fine-tuning LLMs on healthcare datasets</li>
+                <li>Managing VR/XR experiences for 7,000+ weekly users</li>
+                <li>Advanced AWS cloud certifications</li>
+              </ul>
+            </div>
+            <div class="content-card">
+              <h3>Career Interests</h3>
+              <ul>
+                <li>Software Engineering (SWE)</li>
+                <li>Data Analysis & Visualization</li>
+                <li>Full Stack Development</li>
+                <li>Cloud & DevOps Engineering</li>
+                <li>AI/ML Research in Education & Public Policy</li>
+                <li>XR/VR Development & Educational Technology</li>
+              </ul>
+            </div>
+            <div class="content-card">
+              <h3>Languages Spoken</h3>
+              <ul>
+                <li>English (Fluent)</li>
+                <li>Telugu (Native)</li>
+                <li>Hindi (Fluent)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="content-section" id="education">
+          <h2 class="section-header">Education</h2>
+          <div class="content-grid">
+            <div class="content-card">
+              <h3>Bachelor of Science - Computer Science</h3>
+              <p><strong>Arizona State University, Tempe, AZ</strong> | Expected Graduation: December 2026</p>
+              <p><strong>GPA:</strong> 4.0/4.0</p>
+              <p><strong>Minor:</strong> Business</p>
+              <p>Focus on software engineering, cloud computing, information security, and enterprise systems development.</p>
+            </div>
+            <div class="content-card">
+              <h3>Relevant Coursework</h3>
+              <ul>
+                <li>Data Structures & Algorithms</li>
+                <li>Intro to Software Engineering</li>
+                <li>Information Assurance & Security</li>
+                <li>Exploring Data in R and Python</li>
+                <li>Web Design and Development</li>
+                <li>Intro Human Computer Interaction</li>
+                <li>Operating Systems</li>
+                <li>Software QA and Testing</li>
+                <li>Foundation Data Visualisation</li>
+                <li>Entrepreneur Value Creation</li>
+                <li>Accounting and Finance Analysis</li>
+              </ul>
+            </div>
+            <div class="content-card">
+              <h3>🏆 Awards & Honors</h3>
+              <ul>
+                <li>🏅 Dean's List – Spring 2023, Fall 2023, Spring 2024, Fall 2024, Spring 2025</li>
+                <li>🎓 New American University Scholarship – $14,500/year (2023–2026)</li>
+                <li>🛰️ Garmin Scholarship Fund – $8,000/year (2024–2026)</li>
+                <li>🥇 Hackathon Winner – OpenAI Challenge, ASU AI Challenge, PIA Hacks</li>
+                <li>💎 BAL PURASKAR Award – Rotary Club International</li>
+                <li>🧭 Officer of the Year Award – Connecting International Communities</li>
+              </ul>
+            </div>
+            <div class="content-card">
+              <h3>📜 Certifications</h3>
+              <ul>
+                <li>✅ AWS Certified Solutions Architect – Associate (July 2025)</li>
+                <li>✅ AWS Certified Cloud Practitioner (May 2025)</li>
+                <li>✅ MATLAB Onramp (MathWorks) – Mar 2025</li>
+                <li>✅ CITI Human Research – IRB Group 2 – Valid until Jan 2029</li>
+                <li>✅ PI Academy Spring 2025 – Arizona State University</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="content-section" id="skills">
+          <h2 class="section-header">Technical Skills</h2>
+          <div class="content-grid">
+            <div class="content-card">
+              <h3>Programming Languages</h3>
+              <p>Python, Java, JavaScript/TypeScript, C++, C, C#, SQL</p>
+            </div>
+            <div class="content-card">
+              <h3>Frameworks & Libraries</h3>
+              <p>JavaFX, MERN (MongoDB, Express, React, Node), JUnit, Bouncy Castle</p>
+            </div>
+            <div class="content-card">
+              <h3>Web & App Development</h3>
+              <p>React.js, Angular, Flutter, Swift, Kotlin, Dart, HTML5, CSS3, Tailwind CSS</p>
+            </div>
+            <div class="content-card">
+              <h3>Databases & Data Stores</h3>
+              <p>PostgreSQL, MySQL, H2, MongoDB, DynamoDB, Pinecone, MAMP</p>
+            </div>
+            <div class="content-card">
+              <h3>Cloud & DevOps</h3>
+              <p>AWS (Lambda, S3, EC2, RDS, DynamoDB), GCP, Docker, Jenkins, Azure</p>
+            </div>
+            <div class="content-card">
+              <h3>Tools & Platform</h3>
+              <p>VS Code, GitHub, Eclipse, Android Studio, Oracle, Tableau, Power BI, Postman, Jira</p>
+            </div>
+            <div class="content-card">
+              <h3>Business Skills</h3>
+              <p>Strategic Planning, Market Analysis, Project Management, Data Analysis</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="content-section" id="projects">
+          <h2 class="section-header">Projects</h2>
+          <div class="content-grid">
+            <div class="content-card">
+              <h3>Biking Paths Finder</h3>
+              <p><strong>Tech Stack:</strong> FastAPI, GraphQL, Maps JavaScript API, Distance Matrix, OAuth 2.0</p>
+              <p><strong>Duration:</strong> January 2025 - May 2025</p>
+              <p>Built a full-stack web application enabling cyclists to find personalized routes using FastAPI and MongoDB, optimizing path generation and reducing route calculation time by 30%.</p>
+              <ul>
+                <li>Integrated Google Maps Platform (Maps JavaScript API, Distance Matrix API) for real-time mapping and route visualization, enhancing user engagement by 50%</li>
+                <li>Implemented OAuth 2.0 authentication with Google and Facebook login, securing user data with JWT tokens and improving login efficiency by 40%</li>
+              </ul>
+            </div>
+            <div class="content-card">
+              <h3>Scalable Content Delivery System</h3>
+              <p><strong>Tech Stack:</strong> Java, Spring Boot, Redis, PostgreSQL, Docker, AWS (EC2, S3)</p>
+              <p><strong>Duration:</strong> November 2024 - February 2025</p>
+              <p>Designed and implemented a Docker containerized, distributed microservices content delivery system (Spring Boot backend, React frontend) to handle concurrent user requests.</p>
+              <ul>
+                <li>Implemented Redis caching strategies to accelerate response times for frequently accessed content</li>
+                <li>Developed a monitoring dashboard to track system performance metrics and identify bottlenecks</li>
+              </ul>
+            </div>
+            <div class="content-card">
+              <h3>Real-Time Study Group Platform</h3>
+              <p><strong>Tech Stack:</strong> React, Node.js, Socket.io, PostgreSQL, Redis, WebRTC</p>
+              <p><strong>Duration:</strong> April 2024 - October 2024</p>
+              <p>Engineered real-time collaborative platform supporting 50+ concurrent users with WebSocket connections, enabling instant messaging and live document sharing across study rooms.</p>
+              <ul>
+                <li>Integrated WebRTC video chat functionality and collaborative whiteboard using Canvas API, facilitating seamless remote study sessions with sub-100ms latency</li>
+                <li>Implemented user authentication system with Redis session management and developed responsive UI featuring Pomodoro timers, file uploads, and real-time user presence indicators</li>
+              </ul>
+            </div>
+            <div class="content-card">
+              <h3>🏆 AI Challenge: Ethical Policy Simulation Game</h3>
+              <p><strong>Tech Stack:</strong> React.js, Node.js, Tailwind CSS, Web Speech API, GPT-3.5, AWS SES</p>
+              <p><strong>Duration:</strong> March 2025 - April 2025 | <strong>🥇 Winner - OpenAI Challenge</strong></p>
+              <p>Architected a browser-based simulation engaging 200+ users in refugee-education budgeting under a 14-unit constraint, improving decision quality by 35%.</p>
+              <ul>
+                <li>Integrated multimodal UX (voice/text via Web Speech API) and GPT-3.5 agent dialogue with real-time WebSocket voting, boosting session engagement by 50%</li>
+                <li>Automated Node.js report pipelines and AWS SES delivery for 500+ personalised evaluation emails, increasing post-game reflection rates by 60%</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="content-section" id="experience">
+          <h2 class="section-header">Professional Experience</h2>
+          <div class="experience-timeline">
+            <div class="experience-item">
+              <h3>Introduction to Software Engineering Teaching Assistant</h3>
+              <p class="experience-meta">Arizona State University | May 2025 - Present</p>
+              <p>Delivered 10+ Canvas lectures, quizzes, and high-stakes exams for 100+ students, embedding JUnit and Jira demos to reinforce TDD and Agile workflows.</p>
+              <ul>
+                <li>Managed Ed Discussion and direct support: curated 200+ threads with intelligent suggestions, handled 100+ student emails with tailored code reviews, and cut response times to under 4 hrs—boosting peer engagement by 30%</li>
+                <li>Developed the ASU Help System in Java/JavaFX (Spring, H2 DB, Bouncy Castle) with first-user admin onboarding, multi-role access controls, one-time invite codes, and complete UML design artefacts</li>
+              </ul>
+            </div>
+
+            <div class="experience-item">
+              <h3>Appropriations Chair - Travel and Professional Development</h3>
+              <p class="experience-meta">Undergraduate Student Government, Tempe | May 2025 - Present</p>
+              <p>Chair the USG-T Travel & Professional Development Funding Subcommittee, overseeing grant applications for student career and academic advancement.</p>
+              <ul>
+                <li>Ensure compliance with fiscal policies and university regulations, collaborating with the Business Office and Finance Director</li>
+                <li>Lead committee meetings and coordinate with applicants to maximize impact within a $2,000 per student cap</li>
+              </ul>
+            </div>
+
+            <div class="experience-item">
+              <h3>Principled Innovation Academy Intern</h3>
+              <p class="experience-meta">Arizona State University | May 2025 - Present</p>
+              <p>Fine-tuned large language models on healthcare datasets to enhance response accuracy and contextual relevance.</p>
+              <ul>
+                <li>Led data preprocessing tasks, including dataset curation, cleaning, and tokenisation for model training</li>
+                <li>Ran and evaluated model training experiments using transfer learning techniques and prompt optimisation</li>
+              </ul>
+            </div>
+
+            <div class="experience-item">
+              <h3>XR Experience POD Operator</h3>
+              <p class="experience-meta">Dreamscape Learn, Tempe, AZ | February 2024 - Present</p>
+              <p>Developed Unity3D VR simulations for STEM and humanities, driving 7,000+ weekly user sessions and capturing 10,000+ logs for Python-powered analytics and content optimisations.</p>
+              <ul>
+                <li>Calibrated and maintained six haptic pod clusters (6–29 stations each), sustaining >99% hardware uptime and seamless VR performance</li>
+                <li>Delivered technical demos and hands-on training to 50+ VIPs and student groups, translating complex XR concepts into engaging educational experiences</li>
+              </ul>
+            </div>
+
+            <div class="experience-item">
+              <h3>Software Development Engineer Intern</h3>
+              <p class="experience-meta">City of Phoenix | January 2025 - May 2025</p>
+              <p>Developed a C# & SQL desktop asset-management app for 150+ staff with role-based Admin, Distributor, and Technician interfaces, slashing request turnaround by 40%.</p>
+              <ul>
+                <li>Automated IT workflows and managed 200+ Windows NT devices—real-time lookup, usage history tracking, SVN-driven re-imaging—cutting hardware downtime by 35% and boosting efficiency by 30%</li>
+                <li>Built an email-alert system for 500+ weekly asset requests, standardising workflows and accelerating cross-department communication by 40%</li>
+              </ul>
+            </div>
+
+
+          </div>
+        </section>
+
+        <!-- LEADERSHIP & ORGANIZATIONS -->
+        <section class="content-section" id="leadership">
+          <h2 class="section-header">Leadership & Organizations</h2>
+          <div class="content-grid">
+            <div class="content-card">
+              <h3>🏛️ Connecting International Communities</h3>
+              <p><strong>Treasurer</strong> | December 2024 - May 2025</p>
+              <p><strong>Secretary</strong> | June 2024 - May 2025</p>
+              <ul>
+                <li>Manage CIC's financial operations, including budgeting, expense tracking, and fund allocation</li>
+                <li>Facilitate communication and collaboration between international communities, promoting cultural exchange</li>
+                <li>Organized and coordinated in-person events, fostering global networking opportunities</li>
+                <li>🧭 Recipient: Officer of the Year Award</li>
+              </ul>
+            </div>
+            <div class="content-card">
+              <h3>🇮🇳 Indian Student Association</h3>
+              <p><strong>Officer - Public Relations/Technology</strong> | August 2023 - December 2023</p>
+              <ul>
+                <li>Developed strategic communication plans to enhance organization visibility</li>
+                <li>Leveraged technology for efficient communication and event management</li>
+                <li>Orchestrated social media campaigns to boost community engagement</li>
+                <li>Established partnerships and liaised with external stakeholders</li>
+              </ul>
+            </div>
+            <div class="content-card">
+              <h3>🎓 ASU 101 - Section Leader</h3>
+              <p><strong>Ira A. Fulton Schools of Engineering</strong> | August 2023 - December 2023</p>
+              <ul>
+                <li>Assisted in creating course materials such as lecture notes, quizzes, and exams</li>
+                <li>Guided students on lab tasks, safety regulations, and proper techniques</li>
+                <li>Graded coursework and responded to student inquiries promptly</li>
+                <li>Collaborated with lecturers to ensure smooth learning experience</li>
+              </ul>
+            </div>
+            <div class="content-card">
+              <h3>🔄 Interact Club</h3>
+              <p><strong>Director - Community Service</strong> | April 2018 - February 2019</p>
+              <p><strong>Treasurer</strong> | April 2017 - February 2018</p>
+              <ul>
+                <li>Initiated and oversaw diverse community service projects including food drives and environmental clean-ups</li>
+                <li>Managed club finances, budgeting, tracking expenses, and financial reporting</li>
+                <li>🏆 Received the Rotary Youth Leadership Award (RYLA) for excellence as an Interactor</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="content-section" id="contact">
+          <h2 class="section-header">Contact Information</h2>
+          <div class="content-grid">
+            <div class="content-card">
+              <h3>Get In Touch</h3>
+              <p><strong>Email:</strong> nganguma@asu.edu</p>
+              <p><strong>Secondary Email:</strong> gnavignareddy@gmail.com</p>
+              <p><strong>Phone:</strong> (623) 283-7804</p>
+              <p><strong>Location:</strong> Tempe, Arizona</p>
+              <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/navignareddy/" target="_blank">linkedin.com/in/navignareddy</a></p>
+              <p><strong>GitHub:</strong> <a href="https://github.com/navignareddy" target="_blank">github.com/navignareddy</a></p>
+            </div>
+            <div class="content-card">
+              <h3>Professional Profiles</h3>
+              <ul>
+                <li>LinkedIn: Professional network and updates</li>
+                <li>GitHub: Code repositories and contributions</li>
+                <li>Portfolio: Interactive project showcases</li>
+              </ul>
+              <br>
+              <button onclick="downloadResume()" class="resume-btn" style="background: linear-gradient(135deg, #4285f4, #34a853); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
+                📄 Download Resume PDF
+              </button>
+            </div>
+            <div class="content-card">
+              <h3>Availability</h3>
+              <p><strong>Status:</strong> Open to internship and full-time opportunities</p>
+              <p><strong>Graduation:</strong> December 2026</p>
+              <p><strong>Preferred Roles:</strong> Software Engineering, Cloud Architecture, Backend Development</p>
+              <p><strong>Location Preference:</strong> Open to remote and on-site positions</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- AI Chat Modal -->
+  <div class="ai-modal" id="aiModal">
+    <div class="ai-chat-window">
+      <div class="ai-chat-header">
+        <div class="ai-chat-title">🤖 Advanced AI Portfolio Assistant</div>
+        <button class="close-ai" onclick="closeAIChat()">×</button>
+      </div>
+      <div class="ai-chat-body" id="aiChatBody">
+        <div class="ai-message ai">
+          <div class="ai-header">🤖 Hi! I'm Navingna's AI Assistant</div>
+          I can help you learn more about Navingna Reddy Gangumalla! Click on any topic below or ask me anything:<br><br>
+          
+          <div class="ai-quick-topics">
+            <button class="ai-topic-btn" onclick="askAI('Tell me about Navingna\'s achievements')">🏆 Achievements & Awards</button>
+            <button class="ai-topic-btn" onclick="askAI('What are Navingna\'s technical skills?')">💻 Technical Skills</button>
+            <button class="ai-topic-btn" onclick="askAI('Show me Navingna\'s best projects')">🚀 Featured Projects</button>
+            <button class="ai-topic-btn" onclick="askAI('What leadership roles has Navingna held?')">🏛️ Leadership Experience</button>
+            <button class="ai-topic-btn" onclick="askAI('Tell me about Navingna\'s hackathon wins')">🥇 Hackathon Victories</button>
+            <button class="ai-topic-btn" onclick="askAI('What makes Navingna unique?')">⭐ What Makes Him Unique</button>
+            <button class="ai-topic-btn" onclick="askAI('What are Navingna\'s career goals?')">🎯 Career Aspirations</button>
+            <button class="ai-topic-btn" onclick="askAI('How can I contact Navingna?')">📞 Contact Information</button>
+          </div>
+          
+          <br>Or type your own question about Navingna below! 👇
+        </div>
+      </div>
+                <div class="ai-input-area">
+            <input type="text" class="ai-input" id="aiInput" placeholder="Ask me anything about Navingna...">
+            <button class="ai-send" onclick="sendAIMessage()">Send</button>
+          </div>
+    </div>
+  </div>
+
+  <!-- Resume Page -->
+  <section class="resume-section" id="resume">
+    <button class="close-content" onclick="closeResume()" style="position: fixed; top: 75px; right: 30px;">×</button>
+
+    <div class="resume-header">
+      <h1 class="resume-name">Navingna Reddy Gangumalla</h1>
+      <p class="resume-title">Computer Science Student | Business Minor</p>
+      <div class="resume-contact">
+        <span>nganguma@asu.edu</span>
+        <span>|</span>
+        <span>(623) 283-7804</span>
+        <span>|</span>
+        <span>LinkedIn</span>
+        <span>|</span>
+        <span>github.com/johndoe</span>
+      </div>
+    </div>
+
+    <h3 class="resume-section-title">Education</h3>
+    <div class="resume-item">
+      <h4>Bachelor of Science in Computer Science, Minor in Business</h4>
+      <p class="meta">Arizona State University | Expected Graduation: December 2026 | GPA: 4.0/4.0</p>
+      <p>Relevant Coursework: Data Structures & Algorithms, Intro to Software Engineering, Information Assurance, Information Security, Web Design and Development, Operating Systems</p>
+    </div>
+
+    <h3 class="resume-section-title">Technical Skills</h3>
+    <div class="resume-item">
+      <p><strong>Languages:</strong> Python, JavaScript, TypeScript, Java, C++, SQL, Go</p>
+      <p><strong>Frontend:</strong> React, Vue.js, Angular, HTML5, CSS3, Tailwind CSS</p>
+      <p><strong>Backend:</strong> Node.js, Django, Flask, Express.js, Spring Boot, FastAPI</p>
+      <p><strong>AI/ML:</strong> TensorFlow, PyTorch, Scikit-learn, OpenAI API, Pandas, NumPy</p>
+      <p><strong>Tools:</strong> Git, Docker, AWS, Google Cloud, PostgreSQL, MongoDB</p>
+    </div>
+
+    <h3 class="resume-section-title">Professional Experience</h3>
+    <div class="resume-item">
+      <h4>Software Engineering Intern - TechCorp Solutions</h4>
+      <p class="meta">June 2024 - August 2024</p>
+      <ul>
+        <li>Developed microservices using Python and Django, serving 10K+ daily users</li>
+        <li>Optimized database queries, improving response time by 40%</li>
+        <li>Collaborated with cross-functional teams on agile development projects</li>
+      </ul>
+    </div>
+
+    <div class="resume-item">
+      <h4>Freelance Full-Stack Developer - Self-Employed</h4>
+      <p class="meta">January 2023 - Present</p>
+      <ul>
+        <li>Built 15+ websites for small businesses, generating $25K+ in revenue</li>
+        <li>Specialized in React, Vue.js, and modern backend frameworks</li>
+        <li>Managed client relationships and delivered projects on time and within budget</li>
+      </ul>
+    </div>
+
+    <h3 class="resume-section-title">Projects</h3>
+    <div class="resume-item">
+      <h4>AI-Powered Code Review Tool</h4>
+      <p class="meta">Python, FastAPI, OpenAI GPT-4, React, PostgreSQL</p>
+      <p>Developed intelligent code review assistant with 85% accuracy in bug detection, used by 200+ developers</p>
+    </div>
+
+    <div class="resume-item">
+      <h4>E-commerce Analytics Platform</h4>
+      <p class="meta">Vue.js, Node.js, MongoDB, Chart.js, AWS</p>
+      <p>Built comprehensive analytics dashboard with real-time data visualization and predictive analytics</p>
+    </div>
+
+    <h3 class="resume-section-title">Leadership & Activities</h3>
+    <div class="resume-item">
+      <h4>President - Computer Science Club</h4>
+      <p class="meta">September 2023 - Present</p>
+      <p>Led organization of 200+ members, organized tech talks, hackathons, and networking events</p>
+    </div>
+
+    <h3 class="resume-section-title">Awards & Certifications</h3>
+    <div class="resume-item">
+      <ul>
+        <li>Dean's List - Fall 2023, Spring 2024</li>
+        <li>AWS Certified Cloud Practitioner (2024)</li>
+        <li>Programming Competition - 1st Place (2024)</li>
+        <li>Google Cloud Professional Data Engineer (2024)</li>
+      </ul>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
