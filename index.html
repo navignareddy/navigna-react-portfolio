@@ -120,11 +120,27 @@
         <!-- ABOUT -->
         <section class="content-section" id="about">
           <h2 class="section-header">About Me</h2>
+          
+          <!-- Profile Introduction with Picture -->
+          <div class="profile-intro">
+            <div class="profile-image-container">
+              <img src="IMG_5433.jpg" alt="Navigna Reddy Gangumalla" class="profile-picture">
+            </div>
+            <div class="profile-text">
+              <h3>Hello! I'm Navigna Reddy Gangumalla</h3>
+              <p class="profile-tagline">Computer Science Student & Full-Stack Developer</p>
+              <p class="profile-description">
+                Motivated Computer Science student at Arizona State University with a perfect 4.0 GPA and business minor. 
+                Multiple-time hackathon winner with proven expertise in full-stack development, cloud technologies, and XR/VR systems.
+              </p>
+            </div>
+          </div>
+          
           <div class="content-grid">
             <div class="content-card">
               <h3>Professional Summary</h3>
-              <p>Motivated Computer Science student at Arizona State University with a perfect 4.0 GPA and business minor. Multiple-time hackathon winner with proven expertise in full-stack development, cloud technologies, and XR/VR systems.</p>
               <p>Currently serving as Teaching Assistant, Appropriations Chair in Student Government, and XR Pod Operator managing 7,000+ weekly users. AWS certified with extensive experience in enterprise software development and educational technology.</p>
+              <p>Passionate about creating innovative solutions that bridge technology and real-world impact, with particular interest in AI/ML applications, cloud architecture, and educational technology.</p>
             </div>
             <div class="content-card">
               <h3>Currently Working On</h3>
@@ -172,16 +188,17 @@
             <div class="content-card">
               <h3>Relevant Coursework</h3>
               <ul>
-                <li>Data Structures & Algorithms</li>
+                <li>Data Structures and Algorithms</li>
                 <li>Intro to Software Engineering</li>
-                <li>Information Assurance & Security</li>
+                <li>Information Assurance</li>
                 <li>Exploring Data in R and Python</li>
-                <li>Web Design and Development</li>
+                <li>Information Security</li>
                 <li>Intro Human Computer Interaction</li>
+                <li>Web Design and Development</li>
+                <li>Entrepreneur Value Creation</li>
                 <li>Operating Systems</li>
                 <li>Software QA and Testing</li>
                 <li>Foundation Data Visualisation</li>
-                <li>Entrepreneur Value Creation</li>
                 <li>Accounting and Finance Analysis</li>
               </ul>
             </div>
@@ -436,17 +453,17 @@
     </div>
   </main>
 
-  <!-- Swipe Up Indicator -->
-  <div class="swipe-indicator" id="swipeIndicator">
-    <div class="swipe-text">Swipe up for traditional portfolio</div>
-    <div class="swipe-arrow">↑</div>
+  <!-- Traditional Portfolio Access Button -->
+  <div class="portfolio-access-btn" id="portfolioAccessBtn" onclick="openTraditionalPortfolio()">
+    <div class="access-text">Click for Traditional Portfolio</div>
+    <div class="access-icon">📄</div>
   </div>
 
   <!-- Traditional Portfolio -->
   <div class="traditional-portfolio" id="traditionalPortfolio">
     <div class="portfolio-header">
       <button class="close-traditional" onclick="closeTraditionalPortfolio()">×</button>
-      <div class="swipe-up-indicator">Swipe down to return to terminal</div>
+      <div class="portfolio-header-text">Traditional Portfolio View</div>
     </div>
 
     <div class="portfolio-content">
@@ -529,29 +546,63 @@
           </div>
           
           <div class="certifications-card">
-            <h3>Certifications & Training</h3>
+            <h3>Licenses & Certifications</h3>
             <div class="cert-list">
-              <div class="cert-item">
-                <div class="cert-icon">☁️</div>
-                <div class="cert-details">
-                  <h4>AWS Certified Solutions Architect - Associate</h4>
-                  <p>July 2025 | Advanced cloud architecture & deployment</p>
+              <a href="https://www.credly.com/badges/your-aws-sa-badge" target="_blank" class="cert-item cert-link">
+                <div class="cert-icon">
+                  <img src="aws-solutions-architect.png" alt="AWS Solutions Architect" class="cert-badge" onerror="this.style.display='none'">
+                  <span class="cert-fallback">☁️</span>
                 </div>
-              </div>
-              <div class="cert-item">
-                <div class="cert-icon">☁️</div>
                 <div class="cert-details">
-                  <h4>AWS Certified Cloud Practitioner</h4>
-                  <p>May 2025 | Cloud fundamentals & best practices</p>
+                  <h4>✅ AWS Certified Solutions Architect – Associate</h4>
+                  <p>Amazon Web Services | Advanced cloud architecture & deployment</p>
+                  <span class="cert-link-indicator">Click to view certificate ↗</span>
                 </div>
-              </div>
-              <div class="cert-item">
-                <div class="cert-icon">📊</div>
+              </a>
+              <a href="https://www.credly.com/badges/your-aws-cp-badge" target="_blank" class="cert-item cert-link">
+                <div class="cert-icon">
+                  <img src="aws-cloud-practitioner.png" alt="AWS Cloud Practitioner" class="cert-badge" onerror="this.style.display='none'">
+                  <span class="cert-fallback">☁️</span>
+                </div>
                 <div class="cert-details">
-                  <h4>MATLAB Onramp - MathWorks</h4>
-                  <p>March 2025 | Data analysis & visualization</p>
+                  <h4>✅ AWS Certified Cloud Practitioner</h4>
+                  <p>Amazon Web Services | Cloud fundamentals & best practices</p>
+                  <span class="cert-link-indicator">Click to view certificate ↗</span>
                 </div>
-              </div>
+              </a>
+              <a href="https://matlabacademy.mathworks.com/progress/share/certificate.html?id=your-matlab-cert" target="_blank" class="cert-item cert-link">
+                <div class="cert-icon">
+                  <img src="matlab-onramp.png" alt="MATLAB Onramp" class="cert-badge" onerror="this.style.display='none'">
+                  <span class="cert-fallback">📊</span>
+                </div>
+                <div class="cert-details">
+                  <h4>✅ MATLAB Onramp</h4>
+                  <p>MathWorks – Mar 2025 | Data analysis & visualization</p>
+                  <span class="cert-link-indicator">Click to view certificate ↗</span>
+                </div>
+              </a>
+              <a href="https://www.citiprogram.org/verify/?your-cert-id" target="_blank" class="cert-item cert-link">
+                <div class="cert-icon">
+                  <img src="citi-research.png" alt="CITI Human Research" class="cert-badge" onerror="this.style.display='none'">
+                  <span class="cert-fallback">🔬</span>
+                </div>
+                <div class="cert-details">
+                  <h4>✅ CITI Human Research – IRB Group 2</h4>
+                  <p>Collaborative Institutional Training Initiative | Valid until Jan 2029</p>
+                  <span class="cert-link-indicator">Click to view certificate ↗</span>
+                </div>
+              </a>
+              <a href="https://entrepreneurship.asu.edu/pi-academy" target="_blank" class="cert-item cert-link">
+                <div class="cert-icon">
+                  <img src="pi-academy.png" alt="PI Academy" class="cert-badge" onerror="this.style.display='none'">
+                  <span class="cert-fallback">🎓</span>
+                </div>
+                <div class="cert-details">
+                  <h4>✅ PI Academy Spring 2025</h4>
+                  <p>Arizona State University | Principled Innovation Program</p>
+                  <span class="cert-link-indicator">Click to view program ↗</span>
+                </div>
+              </a>
             </div>
             
             <div class="transcript-section">
@@ -587,14 +638,40 @@
                 <span class="skill-tag advanced">Java</span>
                 <span class="skill-tag advanced">JavaScript</span>
                 <span class="skill-tag advanced">TypeScript</span>
-                <span class="skill-tag intermediate">C++</span>
+                <span class="skill-tag advanced">C++</span>
                 <span class="skill-tag intermediate">C</span>
-                <span class="skill-tag intermediate">C#</span>
+                <span class="skill-tag advanced">C#</span>
                 <span class="skill-tag advanced">SQL</span>
               </div>
               <div class="skill-progress">
                 <div class="progress-bar">
-                  <div class="progress-fill" data-width="92%"></div>
+                  <div class="progress-fill" data-width="95%"></div>
+                </div>
+                <span class="proficiency-label">Expert Level</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category" data-category="frameworks">
+            <div class="skill-header">
+              <div class="skill-icon">🛠️</div>
+              <h4>Frameworks & Libraries</h4>
+              <span class="skill-count">Enterprise Stack</span>
+            </div>
+            <div class="skill-details">
+              <div class="skill-tags">
+                <span class="skill-tag advanced">JavaFX</span>
+                <span class="skill-tag advanced">Spring Boot</span>
+                <span class="skill-tag advanced">MERN Stack</span>
+                <span class="skill-tag advanced">Express.js</span>
+                <span class="skill-tag advanced">React.js</span>
+                <span class="skill-tag advanced">Node.js</span>
+                <span class="skill-tag intermediate">JUnit</span>
+                <span class="skill-tag intermediate">Bouncy Castle</span>
+              </div>
+              <div class="skill-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" data-width="90%"></div>
                 </div>
                 <span class="proficiency-label">Expert Level</span>
               </div>
@@ -604,19 +681,20 @@
           <div class="skill-category" data-category="web">
             <div class="skill-header">
               <div class="skill-icon">🌐</div>
-              <h4>Web Development</h4>
-              <span class="skill-count">10+ Technologies</span>
+              <h4>Web & App Development</h4>
+              <span class="skill-count">Full-Stack</span>
             </div>
             <div class="skill-details">
               <div class="skill-tags">
                 <span class="skill-tag advanced">React.js</span>
                 <span class="skill-tag intermediate">Angular</span>
-                <span class="skill-tag advanced">Node.js</span>
-                <span class="skill-tag advanced">Express</span>
+                <span class="skill-tag advanced">Flutter</span>
+                <span class="skill-tag intermediate">Swift</span>
+                <span class="skill-tag intermediate">Kotlin</span>
+                <span class="skill-tag intermediate">Dart</span>
                 <span class="skill-tag advanced">HTML5</span>
                 <span class="skill-tag advanced">CSS3</span>
-                <span class="skill-tag intermediate">Tailwind</span>
-                <span class="skill-tag intermediate">Vue.js</span>
+                <span class="skill-tag advanced">Tailwind CSS</span>
               </div>
               <div class="skill-progress">
                 <div class="progress-bar">
@@ -639,61 +717,41 @@
                 <span class="skill-tag advanced">AWS S3</span>
                 <span class="skill-tag advanced">AWS EC2</span>
                 <span class="skill-tag advanced">AWS RDS</span>
+                <span class="skill-tag advanced">AWS DynamoDB</span>
+                <span class="skill-tag intermediate">GCP</span>
                 <span class="skill-tag intermediate">Docker</span>
                 <span class="skill-tag intermediate">Jenkins</span>
                 <span class="skill-tag intermediate">Azure</span>
               </div>
               <div class="skill-progress">
                 <div class="progress-bar">
-                  <div class="progress-fill" data-width="85%"></div>
+                  <div class="progress-fill" data-width="88%"></div>
                 </div>
                 <span class="proficiency-label">Certified Professional</span>
               </div>
             </div>
           </div>
-          
-          <div class="skill-category" data-category="mobile">
-            <div class="skill-header">
-              <div class="skill-icon">📱</div>
-              <h4>Mobile & App Development</h4>
-              <span class="skill-count">Cross-Platform</span>
-            </div>
-            <div class="skill-details">
-              <div class="skill-tags">
-                <span class="skill-tag advanced">Flutter</span>
-                <span class="skill-tag intermediate">Swift</span>
-                <span class="skill-tag intermediate">Kotlin</span>
-                <span class="skill-tag intermediate">React Native</span>
-                <span class="skill-tag intermediate">Android Studio</span>
-                <span class="skill-tag beginner">Dart</span>
-              </div>
-              <div class="skill-progress">
-                <div class="progress-bar">
-                  <div class="progress-fill" data-width="75%"></div>
-                </div>
-                <span class="proficiency-label">Proficient Level</span>
-              </div>
-            </div>
-          </div>
+
           
           <div class="skill-category" data-category="database">
             <div class="skill-header">
               <div class="skill-icon">🗄️</div>
-              <h4>Databases & Storage</h4>
-              <span class="skill-count">Multi-Database</span>
+              <h4>Databases & Data Stores</h4>
+              <span class="skill-count">Multi-Platform</span>
             </div>
             <div class="skill-details">
               <div class="skill-tags">
                 <span class="skill-tag advanced">PostgreSQL</span>
                 <span class="skill-tag advanced">MySQL</span>
+                <span class="skill-tag advanced">H2</span>
                 <span class="skill-tag advanced">MongoDB</span>
                 <span class="skill-tag intermediate">DynamoDB</span>
-                <span class="skill-tag intermediate">Redis</span>
-                <span class="skill-tag intermediate">H2</span>
+                <span class="skill-tag intermediate">Pinecone</span>
+                <span class="skill-tag intermediate">MAMP</span>
               </div>
               <div class="skill-progress">
                 <div class="progress-bar">
-                  <div class="progress-fill" data-width="82%"></div>
+                  <div class="progress-fill" data-width="85%"></div>
                 </div>
                 <span class="proficiency-label">Advanced Level</span>
               </div>
@@ -702,23 +760,25 @@
           
           <div class="skill-category" data-category="tools">
             <div class="skill-header">
-              <div class="skill-icon">🛠️</div>
-              <h4>Development Tools</h4>
+              <div class="skill-icon">⚙️</div>
+              <h4>Tools & Platforms</h4>
               <span class="skill-count">Professional Suite</span>
             </div>
             <div class="skill-details">
               <div class="skill-tags">
                 <span class="skill-tag advanced">VS Code</span>
                 <span class="skill-tag advanced">GitHub</span>
-                <span class="skill-tag intermediate">Eclipse</span>
-                <span class="skill-tag intermediate">Postman</span>
-                <span class="skill-tag intermediate">Jira</span>
+                <span class="skill-tag advanced">Eclipse</span>
+                <span class="skill-tag intermediate">Android Studio</span>
+                <span class="skill-tag intermediate">Oracle</span>
                 <span class="skill-tag advanced">Tableau</span>
                 <span class="skill-tag intermediate">Power BI</span>
+                <span class="skill-tag intermediate">Postman</span>
+                <span class="skill-tag intermediate">Jira</span>
               </div>
               <div class="skill-progress">
                 <div class="progress-bar">
-                  <div class="progress-fill" data-width="90%"></div>
+                  <div class="progress-fill" data-width="92%"></div>
                 </div>
                 <span class="proficiency-label">Expert Level</span>
               </div>
@@ -857,6 +917,7 @@
           Professional Experience
         </h2>
         <div class="experience-timeline">
+          <!-- Current Teaching Assistant Position -->
           <div class="timeline-item current">
             <div class="timeline-marker">
               <div class="marker-dot active"></div>
@@ -864,61 +925,130 @@
             </div>
             <div class="timeline-content">
               <div class="experience-header">
-                <h3>Teaching Assistant - Software Engineering</h3>
+                <h3>Introduction to Software Engineering Teaching Assistant</h3>
                 <span class="company">Arizona State University</span>
                 <span class="duration">May 2025 - Present</span>
               </div>
               <div class="experience-details">
                 <p class="role-description">
-                  Leading educational excellence for 100+ computer science students in advanced software engineering concepts,
-                  managing comprehensive learning management systems, and providing personalized code reviews.
+                  Delivering comprehensive software engineering education to 100+ students with emphasis on TDD, Agile workflows, and practical development skills using industry-standard tools.
                 </p>
                 <div class="responsibilities">
-                  <h5>Key Responsibilities:</h5>
+                  <h5>Key Achievements:</h5>
                   <ul>
-                    <li>📚 Deliver lectures and create assignments for software engineering fundamentals</li>
-                    <li>💻 Provide detailed code reviews and debugging assistance</li>
-                    <li>🎯 Manage Ed Discussion platform with 200+ threads weekly</li>
-                    <li>📊 Develop assessment strategies and grading rubrics</li>
+                    <li>📚 Delivered 10+ Canvas lectures, quizzes, and high-stakes exams for 100+ students</li>
+                    <li>💻 Embedded JUnit and Jira demos to reinforce TDD and Agile workflows</li>
+                    <li>💬 Managed Ed Discussion and direct support: curated 200+ threads with intelligent suggestions</li>
+                    <li>📧 Handled 100+ student emails with tailored code reviews, cutting response times to under 4 hrs</li>
+                    <li>🚀 Boosted peer engagement by 30% through effective community management</li>
+                    <li>🛠️ Developed the ASU Help System in Java/JavaFX with Spring, H2 DB, Bouncy Castle</li>
+                    <li>🔐 Implemented first-user admin onboarding, multi-role access controls, one-time invite codes</li>
                   </ul>
                 </div>
                 <div class="impact-metrics">
                   <div class="impact-item">
                     <span class="impact-number">100+</span>
-                    <span class="impact-label">Students Managed</span>
+                    <span class="impact-label">Students Taught</span>
                   </div>
                   <div class="impact-item">
                     <span class="impact-number">200+</span>
-                    <span class="impact-label">Weekly Discussions</span>
+                    <span class="impact-label">Discussion Threads</span>
+                  </div>
+                  <div class="impact-item">
+                    <span class="impact-number">30%</span>
+                    <span class="impact-label">Engagement Boost</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
-          <div class="timeline-item">
+
+          <!-- Current PIA Intern -->
+          <div class="timeline-item current">
             <div class="timeline-marker">
-              <div class="marker-dot"></div>
+              <div class="marker-dot active"></div>
               <div class="marker-line"></div>
             </div>
             <div class="timeline-content">
               <div class="experience-header">
-                <h3>XR Pod Operator</h3>
+                <h3>Principled Innovation Academy Intern</h3>
                 <span class="company">Arizona State University</span>
-                <span class="duration">January 2025 - Present</span>
+                <span class="duration">May 2025 - Present</span>
               </div>
               <div class="experience-details">
                 <p class="role-description">
-                  Managing cutting-edge VR/AR experiences for 7,000+ weekly users, overseeing technology operations,
-                  and facilitating immersive learning environments across multiple academic disciplines.
+                  Leading AI/ML research initiatives in healthcare, focusing on large language model optimization and advanced data preprocessing techniques.
                 </p>
                 <div class="responsibilities">
-                  <h5>Key Achievements:</h5>
+                  <h5>Research Impact:</h5>
                   <ul>
-                    <li>🥽 Operating state-of-the-art VR/AR equipment daily</li>
-                    <li>👥 Serving 7,000+ users weekly across campus</li>
-                    <li>🔧 Troubleshooting and maintaining XR technology</li>
-                    <li>📈 Optimizing user experience and system performance</li>
+                    <li>🤖 Fine-tuned large language models on healthcare datasets to enhance response accuracy</li>
+                    <li>📊 Led data preprocessing tasks including dataset curation, cleaning, and tokenisation</li>
+                    <li>🧪 Ran and evaluated model training experiments using transfer learning techniques</li>
+                    <li>💡 Implemented prompt optimization strategies for improved contextual relevance</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Current USG Position -->
+          <div class="timeline-item current">
+            <div class="timeline-marker">
+              <div class="marker-dot active"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="experience-header">
+                <h3>Appropriations Chair - Travel and Professional Development</h3>
+                <span class="company">Undergraduate Student Government, Tempe</span>
+                <span class="duration">May 2025 - Present</span>
+              </div>
+              <div class="experience-details">
+                <p class="role-description">
+                  Chairing the USG-T Travel & Professional Development Funding Subcommittee, overseeing strategic grant allocation for student career advancement.
+                </p>
+                <div class="responsibilities">
+                  <h5>Leadership Excellence:</h5>
+                  <ul>
+                    <li>💰 Chair the USG-T Travel & Professional Development Funding Subcommittee</li>
+                    <li>📋 Oversee grant applications for student career and academic advancement</li>
+                    <li>⚖️ Ensure compliance with fiscal policies and university regulations</li>
+                    <li>🤝 Collaborate with Business Office and Finance Director</li>
+                    <li>📊 Lead committee meetings and coordinate with applicants</li>
+                    <li>💵 Maximize impact within $2,000 per student funding cap</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Current XR Pod Operator -->
+          <div class="timeline-item current">
+            <div class="timeline-marker">
+              <div class="marker-dot active"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="experience-header">
+                <h3>XR Experience POD Operator</h3>
+                <span class="company">Dreamscape Learn, Tempe, AZ</span>
+                <span class="duration">Feb 2024 - Present</span>
+              </div>
+              <div class="experience-details">
+                <p class="role-description">
+                  Managing cutting-edge VR/AR experiences and developing Unity3D simulations while maintaining enterprise-level hardware infrastructure.
+                </p>
+                <div class="responsibilities">
+                  <h5>Technical Leadership:</h5>
+                  <ul>
+                    <li>🎮 Developed Unity3D VR simulations for STEM and humanities education</li>
+                    <li>👥 Driving 7,000+ weekly user sessions across campus</li>
+                    <li>📈 Capturing 10,000+ logs for Python-powered analytics and content optimizations</li>
+                    <li>🔧 Calibrated and maintained six haptic pod clusters (6–29 stations each)</li>
+                    <li>⚡ Sustained >99% hardware uptime and seamless VR performance</li>
+                    <li>🎯 Delivered technical demos to 50+ VIPs and student groups</li>
+                    <li>🌐 Translated complex XR concepts into engaging educational experiences</li>
                   </ul>
                 </div>
                 <div class="impact-metrics">
@@ -927,36 +1057,88 @@
                     <span class="impact-label">Weekly Users</span>
                   </div>
                   <div class="impact-item">
-                    <span class="impact-number">99%</span>
-                    <span class="impact-label">Uptime</span>
+                    <span class="impact-number">99%+</span>
+                    <span class="impact-label">Hardware Uptime</span>
+                  </div>
+                  <div class="impact-item">
+                    <span class="impact-number">10,000+</span>
+                    <span class="impact-label">Analytics Logs</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
+
+          <!-- City of Phoenix Internship -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="experience-header">
+                <h3>Software Development Engineer Intern</h3>
+                <span class="company">City of Phoenix</span>
+                <span class="duration">01/2025 - 05/2025</span>
+              </div>
+              <div class="experience-details">
+                <p class="role-description">
+                  Engineered enterprise-level asset management solutions and automated IT workflows for large-scale municipal operations.
+                </p>
+                <div class="responsibilities">
+                  <h5>Technical Achievements:</h5>
+                  <ul>
+                    <li>🖥️ Developed C# & SQL desktop asset-management app for 150+ staff</li>
+                    <li>👥 Built role-based Admin, Distributor, and Technician interfaces</li>
+                    <li>⚡ Slashed request turnaround by 40% through automation</li>
+                    <li>🔄 Automated IT workflows and managed 200+ Windows NT devices</li>
+                    <li>📊 Real-time lookup, usage history tracking, SVN-driven re-imaging</li>
+                    <li>📉 Cut hardware downtime by 35% and boosted efficiency by 30%</li>
+                    <li>📧 Built email-alert system for 500+ weekly asset requests</li>
+                    <li>🚀 Accelerated cross-department communication by 40%</li>
+                  </ul>
+                </div>
+                <div class="impact-metrics">
+                  <div class="impact-item">
+                    <span class="impact-number">150+</span>
+                    <span class="impact-label">Staff Users</span>
+                  </div>
+                  <div class="impact-item">
+                    <span class="impact-number">40%</span>
+                    <span class="impact-label">Turnaround Reduction</span>
+                  </div>
+                  <div class="impact-item">
+                    <span class="impact-number">500+</span>
+                    <span class="impact-label">Weekly Requests</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ASU 101 Section Leader -->
           <div class="timeline-item">
             <div class="timeline-marker">
               <div class="marker-dot"></div>
             </div>
             <div class="timeline-content">
               <div class="experience-header">
-                <h3>Appropriations Chair</h3>
-                <span class="company">Undergraduate Student Government</span>
-                <span class="duration">September 2024 - Present</span>
+                <h3>ASU 101 Section Leader</h3>
+                <span class="company">Ira A. Fulton Schools of Engineering, ASU</span>
+                <span class="duration">Aug 2023 - Dec 2023</span>
               </div>
               <div class="experience-details">
                 <p class="role-description">
-                  Leading financial oversight and strategic funding decisions for student organizations, 
-                  managing substantial budgets for travel and professional development initiatives.
+                  Provided educational support and guidance to engineering students in foundational coursework and laboratory experiences.
                 </p>
                 <div class="responsibilities">
-                  <h5>Leadership Impact:</h5>
+                  <h5>Educational Leadership:</h5>
                   <ul>
-                    <li>💰 Overseeing substantial funding allocations</li>
-                    <li>✈️ Managing travel and professional development funds</li>
-                    <li>📋 Conducting budget reviews and presentations</li>
-                    <li>🤝 Collaborating with diverse student organizations</li>
+                    <li>📝 Assisted in creating course materials: lecture notes, quizzes, and exams</li>
+                    <li>🔬 Guided students on lab tasks, safety regulations, and proper techniques</li>
+                    <li>📊 Graded coursework, quizzes, and exams with detailed feedback</li>
+                    <li>💬 Responded to student inquiries promptly and effectively</li>
+                    <li>🤝 Collaborated with lecturers to ensure smooth learning experiences</li>
                   </ul>
                 </div>
               </div>
@@ -977,7 +1159,10 @@
         
         <div class="contact-grid">
           <div class="contact-card primary">
-            <div class="contact-icon">📧</div>
+            <div class="contact-icon">
+              <img src="gmail.png" alt="Email" class="contact-icon-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+              <span class="contact-icon-fallback" style="display:none;">📧</span>
+            </div>
             <h4>Primary Email</h4>
             <a href="mailto:nganguma@asu.edu" class="contact-link">
               nganguma@asu.edu
@@ -986,7 +1171,10 @@
           </div>
           
           <div class="contact-card secondary">
-            <div class="contact-icon">📮</div>
+            <div class="contact-icon">
+              <img src="gmail.png" alt="Email" class="contact-icon-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+              <span class="contact-icon-fallback" style="display:none;">📮</span>
+            </div>
             <h4>Personal Email</h4>
             <a href="mailto:gnavignareddy@gmail.com" class="contact-link">
               gnavignareddy@gmail.com
@@ -994,8 +1182,30 @@
             <p class="contact-note">Alternative contact method</p>
           </div>
           
+          <div class="contact-card phone">
+            <div class="contact-icon">
+              <img src="phone-icon.png" alt="Phone" class="contact-icon-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+              <span class="contact-icon-fallback" style="display:none;">📱</span>
+            </div>
+            <h4>Phone</h4>
+            <a href="tel:+16232837804" class="contact-link">
+              (623) 283-7804
+            </a>
+            <p class="contact-note">Available for calls & text messages</p>
+          </div>
+          
+          <div class="contact-card location">
+            <div class="contact-icon">📍</div>
+            <h4>Location</h4>
+            <span class="contact-info">Tempe, Arizona</span>
+            <p class="contact-note">Available for local & remote opportunities</p>
+          </div>
+          
           <div class="contact-card social">
-            <div class="contact-icon">💼</div>
+            <div class="contact-icon">
+              <img src="linkedin.png" alt="LinkedIn" class="contact-icon-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+              <span class="contact-icon-fallback" style="display:none;">💼</span>
+            </div>
             <h4>LinkedIn</h4>
             <a href="https://www.linkedin.com/in/navignareddy/" target="_blank" class="contact-link social-link">
               <span>linkedin.com/in/navignareddy</span>
@@ -1005,7 +1215,10 @@
           </div>
           
           <div class="contact-card social">
-            <div class="contact-icon">💻</div>
+            <div class="contact-icon">
+              <img src="github.png" alt="GitHub" class="contact-icon-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+              <span class="contact-icon-fallback" style="display:none;">💻</span>
+            </div>
             <h4>GitHub</h4>
             <a href="https://github.com/navignareddy" target="_blank" class="contact-link social-link">
               <span>github.com/navignareddy</span>

@@ -750,10 +750,12 @@ const commands = {
    ai recommend       → Role suggestions
    
 🛠️ Utilities:
+   portfolio          → Traditional portfolio view
    clear, whoami, pwd, date
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
   },
   start: () => { showResume(); return '🚀 Opening professional resume...'; },
+  portfolio: () => { openTraditionalPortfolio(); return '📄 Opening traditional portfolio view...'; },
   ls: () => {
     return `📂 Portfolio Sections:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -952,80 +954,26 @@ aiModal.addEventListener('click', e => {
 // This init message is now handled by the start page functionality
 
 // Traditional portfolio toggles & download
-function openTraditionalPortfolio() {
-  document.getElementById('traditionalPortfolio').classList.add('active');
-  document.getElementById('swipeIndicator').classList.add('hidden');
-}
-function closeTraditionalPortfolio() {
-  document.getElementById('traditionalPortfolio').classList.remove('active');
-  document.getElementById('swipeIndicator').classList.remove('hidden');
-}
+// These functions are now defined below with enhanced functionality
 function downloadResume() {
   // Link to the actual resume PDF
   window.open('https://docs.google.com/document/d/1dPYONY_o3NWheQMsZnYy4uwJZHJ_ktWs/edit?usp=sharing&ouid=113037602875858214346&rtpof=true&sd=true', '_blank');
 }
 
-// Swipe & wheel gestures
-let startY = 0, startTime = 0;
-document.addEventListener('touchstart', e => {
-  startY = e.touches[0].clientY;
-  startTime = Date.now();
-}, { passive: true });
-document.addEventListener('touchend', e => {
-  const endY = e.changedTouches[0].clientY;
-  const endTime = Date.now();
-  const deltaY = endY - startY;
-  const deltaT = endTime - startTime;
-  if (deltaY > 100 && deltaT < 500 && !document.getElementById('traditionalPortfolio').classList.contains('active')) {
-    openTraditionalPortfolio();
-  } else if (deltaY < -100 && deltaT < 500 && document.getElementById('traditionalPortfolio').classList.contains('active')) {
-    closeTraditionalPortfolio();
-  }
-}, { passive: true });
+// Portfolio access is now purely click-based
+// Touch and wheel gestures removed for cleaner UX
 
-let wheelDelta = 0;
-document.addEventListener('wheel', e => {
-  wheelDelta += e.deltaY;
-  clearTimeout(window.wheelTimeout);
-  window.wheelTimeout = setTimeout(() => {
-    if (wheelDelta > 300 && !document.getElementById('traditionalPortfolio').classList.contains('active')) {
-      openTraditionalPortfolio();
-    } else if (wheelDelta < -300 && document.getElementById('traditionalPortfolio').classList.contains('active')) {
-      closeTraditionalPortfolio();
-    }
-    wheelDelta = 0;
-  }, 100);
-}, { passive: true });
-
-// Keyboard shortcuts
+// Essential keyboard shortcuts
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && document.getElementById('traditionalPortfolio').classList.contains('active')) {
-    closeTraditionalPortfolio();
-  } else if (e.key === 'ArrowDown' && !document.getElementById('traditionalPortfolio').classList.contains('active')) {
-    openTraditionalPortfolio();
-  } else if (e.key === 'ArrowUp' && document.getElementById('traditionalPortfolio').classList.contains('active')) {
     closeTraditionalPortfolio();
   }
 });
 
-// Auto-hide swipe indicator and add click functionality
-setTimeout(() => {
-  const ind = document.getElementById('swipeIndicator');
-  if (ind) ind.style.opacity = '0.7';
-}, 5000);
-
-const swipeIndicator = document.getElementById('swipeIndicator');
-if (swipeIndicator) {
-  swipeIndicator.addEventListener('mouseenter', function() {
-    this.style.opacity = '1';
-  });
-  swipeIndicator.addEventListener('mouseleave', function() {
-    this.style.opacity = '0.7';
-  });
-  swipeIndicator.addEventListener('click', function() {
-    openTraditionalPortfolio();
-  });
-}
+// Initialize portfolio access button visibility
+document.addEventListener('DOMContentLoaded', () => {
+  updatePortfolioButtonVisibility();
+});
 
 // Start Page Functionality
 function enterPortfolio() {
@@ -1126,6 +1074,9 @@ function openTraditionalPortfolio() {
     portfolio.classList.add('active');
     document.body.style.overflow = 'hidden';
     
+    // Hide the portfolio access button
+    hidePortfolioButton();
+    
     // Trigger animations after portfolio opens
     setTimeout(() => {
       animateCounters();
@@ -1140,6 +1091,9 @@ function closeTraditionalPortfolio() {
   if (portfolio) {
     portfolio.classList.remove('active');
     document.body.style.overflow = 'auto';
+    
+    // Show the portfolio access button again
+    showPortfolioButton();
   }
 }
 
@@ -1201,36 +1155,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Update existing swipe gesture handling for enhanced portfolio
-// Note: startY, currentY, isDragging already declared above
+// Portfolio Access Button Functionality
+function showPortfolioButton() {
+  const portfolioBtn = document.getElementById('portfolioAccessBtn');
+  if (portfolioBtn) {
+    portfolioBtn.style.display = 'flex';
+    portfolioBtn.classList.remove('hidden');
+  }
+}
 
-document.addEventListener('touchstart', (e) => {
-  startY = e.touches[0].clientY;
-  isDragging = true;
-});
+function hidePortfolioButton() {
+  const portfolioBtn = document.getElementById('portfolioAccessBtn');
+  if (portfolioBtn) {
+    portfolioBtn.classList.add('hidden');
+  }
+}
 
-document.addEventListener('touchmove', (e) => {
-  if (!isDragging) return;
-  currentY = e.touches[0].clientY;
-});
-
-document.addEventListener('touchend', () => {
-  if (!isDragging) return;
-  isDragging = false;
-  
-  const deltaY = startY - currentY;
+// Show/hide portfolio button based on portfolio state
+function updatePortfolioButtonVisibility() {
   const traditionalPortfolio = document.getElementById('traditionalPortfolio');
   
-  // Swipe up to open traditional portfolio
-  if (deltaY > 50 && !traditionalPortfolio?.classList.contains('active')) {
-    openTraditionalPortfolio();
+  if (traditionalPortfolio?.classList.contains('active')) {
+    hidePortfolioButton();
+  } else {
+    showPortfolioButton();
   }
-  
-  // Swipe down to close traditional portfolio
-  if (deltaY < -50 && traditionalPortfolio?.classList.contains('active')) {
-    closeTraditionalPortfolio();
-  }
-});
+}
 
 // Keyboard navigation for traditional portfolio
 document.addEventListener('keydown', (e) => {
@@ -1240,6 +1190,7 @@ document.addEventListener('keydown', (e) => {
     closeTraditionalPortfolio();
   }
   
+  // Keep Ctrl+Up arrow as alternative access method
   if (e.key === 'ArrowUp' && e.ctrlKey && !traditionalPortfolio?.classList.contains('active')) {
     e.preventDefault();
     openTraditionalPortfolio();
