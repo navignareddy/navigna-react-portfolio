@@ -13,7 +13,7 @@ const startPage = document.getElementById('startPage');
 // Structured portfolio database (data for AI responses)
 const portfolioDatabase = {
   profile: {
-    name: "Navingna Reddy Gangumalla",
+    name: "Navigna Reddy Gangumalla",
     title: "Computer Science Student with Business Minor",
     university: "Arizona State University",
     graduation: "December 2026",
@@ -29,7 +29,7 @@ const portfolioDatabase = {
   careerStrategy: { /* … */ }
 };
 
-// Enhanced AI response function for Navingna's portfolio
+// Enhanced AI response function for Navigna's portfolio
 function generateAdvancedAIResponse(query) {
   const q = query.toLowerCase();
   
@@ -37,7 +37,7 @@ function generateAdvancedAIResponse(query) {
   if (q.includes('hi') || q.includes('hello') || q.includes('hey') || q === '' || q.includes('greeting')) {
     const greetings = [
       `
-        <div class="ai-header">👋 Hello! I'm Navingna's AI Assistant</div>
+        <div class="ai-header">👋 Hello! I'm Navigna's AI Assistant</div>
         
         <div class="ai-section">
           <div class="ai-section-title">🤖 What I Can Help You With</div>
@@ -45,13 +45,13 @@ function generateAdvancedAIResponse(query) {
           <div class="ai-metric">Learn about her achievements and awards</div>
           <div class="ai-metric">Discover her leadership experience</div>
           <div class="ai-metric">Get contact information</div>
-          <br>I'm trained specifically on <span class="ai-highlight">Navingna's portfolio data</span> and can provide detailed insights about her background and expertise.
+          <br>I'm trained specifically on <span class="ai-highlight">Navigna's portfolio data</span> and can provide detailed insights about her background and expertise.
         </div>
 
         <div class="ai-section">
           <div class="ai-section-title">💬 Try Asking Me</div>
           <ul class="ai-list">
-            <li>"What programming languages does Navingna know?"</li>
+            <li>"What programming languages does Navigna know?"</li>
             <li>"Tell me about her hackathon wins"</li>
             <li>"What makes her unique as a candidate?"</li>
             <li>"How can I contact her?"</li>
@@ -59,7 +59,7 @@ function generateAdvancedAIResponse(query) {
         </div>
       `,
       `
-        <div class="ai-header">🎯 Welcome! Ready to Learn About Navingna?</div>
+        <div class="ai-header">🎯 Welcome! Ready to Learn About Navigna?</div>
         
         <div class="ai-section">
           <div class="ai-section-title">⭐ Quick Highlights</div>
@@ -86,16 +86,16 @@ function generateAdvancedAIResponse(query) {
       
       <div class="ai-section">
         <div class="ai-section-title">🤝 Let's Keep the Conversation Going</div>
-        <p>I'm here to help you learn more about Navingna's background, skills, and experience. Feel free to ask me anything else!</p>
+        <p>I'm here to help you learn more about Navigna's background, skills, and experience. Feel free to ask me anything else!</p>
         <br><span class="ai-highlight">Popular questions:</span> "What are her best projects?" or "Tell me about her leadership experience"
       </div>
     `;
   }
 
   // Who/what/where questions
-  if (q.includes('who is navingna') || q.includes('who is she') || q.includes('tell me about navingna') || q.includes('tell me about her')) {
+  if (q.includes('who is navigna') || q.includes('who is she') || q.includes('tell me about navigna') || q.includes('tell me about her')) {
     return `
-      <div class="ai-header">👩‍💻 Meet Navingna Reddy Gangumalla</div>
+      <div class="ai-header">👩‍💻 Meet Navigna Reddy Gangumalla</div>
       
       <div class="ai-section">
         <div class="ai-section-title">🎓 Academic Excellence</div>
@@ -119,7 +119,7 @@ function generateAdvancedAIResponse(query) {
   // Programming/coding questions
   if (q.includes('programming') || q.includes('coding') || q.includes('languages') || q.includes('code')) {
     return `
-      <div class="ai-header">💻 Navingna's Programming Expertise</div>
+      <div class="ai-header">💻 Navigna's Programming Expertise</div>
       
       <div class="ai-section">
         <div class="ai-section-title">🚀 Primary Languages</div>
@@ -148,7 +148,7 @@ function generateAdvancedAIResponse(query) {
       
       <div class="ai-section">
         <div class="ai-section-title">🌟 She Really Is Exceptional</div>
-        <p>Navingna has worked incredibly hard to achieve this level of excellence. Her combination of technical skills, academic performance, and leadership experience is quite rare among students.</p>
+        <p>Navigna has worked incredibly hard to achieve this level of excellence. Her combination of technical skills, academic performance, and leadership experience is quite rare among students.</p>
         <br><span class="ai-highlight">Want to know more?</span> Ask me about her specific projects or achievements!
       </div>
     `;
@@ -157,7 +157,7 @@ function generateAdvancedAIResponse(query) {
   // Education/school questions
   if (q.includes('education') || q.includes('school') || q.includes('university') || q.includes('college') || q.includes('gpa') || q.includes('degree')) {
     return `
-      <div class="ai-header">🎓 Navingna's Academic Excellence</div>
+      <div class="ai-header">🎓 Navigna's Academic Excellence</div>
       
       <div class="ai-section">
         <div class="ai-section-title">🏫 Arizona State University</div>
@@ -182,7 +182,7 @@ function generateAdvancedAIResponse(query) {
   // Experience/work questions
   if (q.includes('experience') || q.includes('work') || q.includes('job') || q.includes('internship') || q.includes('teaching')) {
     return `
-      <div class="ai-header">💼 Navingna's Professional Experience</div>
+      <div class="ai-header">💼 Navigna's Professional Experience</div>
       
       <div class="ai-section">
         <div class="ai-section-title">👩‍🏫 Current Teaching Role</div>
@@ -205,7 +205,7 @@ function generateAdvancedAIResponse(query) {
   // Best/top questions
   if (q.includes('best') || q.includes('top') || q.includes('most impressive') || q.includes('strongest')) {
     return `
-      <div class="ai-header">⭐ Navingna's Top Accomplishments</div>
+      <div class="ai-header">⭐ Navigna's Top Accomplishments</div>
       
       <div class="ai-section">
         <div class="ai-section-title">🥇 Most Impressive Achievement</div>
@@ -232,7 +232,7 @@ function generateAdvancedAIResponse(query) {
       
       <div class="ai-section">
         <div class="ai-section-title">💡 I'm Here to Help</div>
-        <p>No worries! I can explain anything about Navingna in more detail. Try asking specific questions like:</p>
+        <p>No worries! I can explain anything about Navigna in more detail. Try asking specific questions like:</p>
         <ul class="ai-list">
           <li>"What projects has she worked on?"</li>
           <li>"What are her technical skills?"</li>
@@ -247,14 +247,14 @@ function generateAdvancedAIResponse(query) {
   // Achievements & Awards
   if (q.includes('achievement') || q.includes('award') || q.includes('honor')) {
     return `
-      <div class="ai-header">🏆 Navingna's Outstanding Achievements</div>
+      <div class="ai-header">🏆 Navigna's Outstanding Achievements</div>
       
       <div class="ai-section">
         <div class="ai-section-title">🎓 Academic Excellence</div>
         <div class="ai-metric">Perfect 4.0 GPA</div>
         <div class="ai-metric">Dean's List (5 consecutive semesters)</div>
         <div class="ai-metric">$22,500+ in Scholarships</div>
-        <br>Navingna maintains <span class="ai-highlight">perfect academic performance</span> while balancing multiple leadership roles and internships.
+        <br>Navigna maintains <span class="ai-highlight">perfect academic performance</span> while balancing multiple leadership roles and internships.
       </div>
 
       <div class="ai-section">
@@ -278,7 +278,7 @@ function generateAdvancedAIResponse(query) {
   // Technical Skills
   if (q.includes('technical') || q.includes('skill') || q.includes('programming') || q.includes('technology')) {
     return `
-      <div class="ai-header">💻 Navingna's Technical Expertise</div>
+      <div class="ai-header">💻 Navigna's Technical Expertise</div>
       
       <div class="ai-section">
         <div class="ai-section-title">🚀 Programming Languages</div>
@@ -310,7 +310,7 @@ function generateAdvancedAIResponse(query) {
   // Projects
   if (q.includes('project') || q.includes('portfolio') || q.includes('work')) {
     return `
-      <div class="ai-header">🚀 Navingna's Featured Projects</div>
+      <div class="ai-header">🚀 Navigna's Featured Projects</div>
       
       <div class="ai-section">
         <div class="ai-section-title">🏆 AI Challenge: Ethical Policy Simulation Game</div>
@@ -341,7 +341,7 @@ function generateAdvancedAIResponse(query) {
   // Leadership
   if (q.includes('leadership') || q.includes('organization') || q.includes('management')) {
     return `
-      <div class="ai-header">🏛️ Navingna's Leadership Journey</div>
+      <div class="ai-header">🏛️ Navigna's Leadership Journey</div>
       
       <div class="ai-section">
         <div class="ai-section-title">🎓 Student Government Leadership</div>
@@ -372,7 +372,7 @@ function generateAdvancedAIResponse(query) {
   // Hackathon wins
   if (q.includes('hackathon') || q.includes('competition') || q.includes('win')) {
     return `
-      <div class="ai-header">🥇 Navingna's Hackathon Victories</div>
+      <div class="ai-header">🥇 Navigna's Hackathon Victories</div>
       
       <div class="ai-section">
         <div class="ai-section-title">🏆 Championship Track Record</div>
@@ -403,7 +403,7 @@ function generateAdvancedAIResponse(query) {
   // What makes him unique
   if (q.includes('unique') || q.includes('special') || q.includes('differentiator') || q.includes('stand out')) {
     return `
-      <div class="ai-header">⭐ What Makes Navingna Unique</div>
+      <div class="ai-header">⭐ What Makes Navigna Unique</div>
       
       <div class="ai-section">
         <div class="ai-section-title">🎯 Rare Combination</div>
@@ -435,7 +435,7 @@ function generateAdvancedAIResponse(query) {
   // Career goals
   if (q.includes('career') || q.includes('goal') || q.includes('aspiration') || q.includes('future')) {
     return `
-      <div class="ai-header">🎯 Navingna's Career Aspirations</div>
+      <div class="ai-header">🎯 Navigna's Career Aspirations</div>
       
       <div class="ai-section">
         <div class="ai-section-title">🚀 Primary Focus Areas</div>
@@ -467,13 +467,13 @@ function generateAdvancedAIResponse(query) {
   // Contact information
   if (q.includes('contact') || q.includes('reach') || q.includes('email') || q.includes('phone') || q.includes('connect')) {
     return `
-      <div class="ai-header">📞 Get in Touch with Navingna</div>
+      <div class="ai-header">📞 Get in Touch with Navigna</div>
       
       <div class="ai-section">
         <div class="ai-section-title">📧 Email</div>
         <div class="ai-metric">nganguma@asu.edu (Primary)</div>
         <div class="ai-metric">gnavignareddy@gmail.com (Personal)</div>
-        <br>Best way to reach Navingna for <span class="ai-highlight">professional inquiries and opportunities</span>.
+        <br>Best way to reach Navigna for <span class="ai-highlight">professional inquiries and opportunities</span>.
       </div>
 
       <div class="ai-section">
@@ -668,7 +668,7 @@ function generateAdvancedAIResponse(query) {
   // Help requests
   if (q.includes('help') || q.includes('what can you do') || q.includes('how do you work')) {
     return `
-      <div class="ai-header">🧠 I'm Your Personal Navingna Expert!</div>
+      <div class="ai-header">🧠 I'm Your Personal Navigna Expert!</div>
       
       <div class="ai-section">
         <div class="ai-section-title">💬 Natural Conversation</div>
@@ -676,7 +676,7 @@ function generateAdvancedAIResponse(query) {
         <ul class="ai-list">
           <li>"Tell me about her projects"</li>
           <li>"What programming languages does she know?"</li>
-          <li>"How can I contact Navingna?"</li>
+                      <li>"How can I contact Navigna?"</li>
           <li>"What makes her unique?"</li>
         </ul>
       </div>
@@ -695,13 +695,13 @@ function generateAdvancedAIResponse(query) {
   }
 
   // Smart fallback with context awareness
-  if (q.includes('navingna') || q.includes('she') || q.includes('her')) {
+  if (q.includes('navigna') || q.includes('she') || q.includes('her')) {
     return `
       <div class="ai-header">🤔 I'd Love to Help, But Need More Details</div>
       
       <div class="ai-section">
         <div class="ai-section-title">💡 Could You Be More Specific?</div>
-        <p>I can tell you about many aspects of Navingna's background. Try asking about:</p>
+        <p>I can tell you about many aspects of Navigna's background. Try asking about:</p>
         <ul class="ai-list">
           <li><strong>Technical Skills:</strong> "What programming languages does she know?"</li>
           <li><strong>Projects:</strong> "Tell me about her best projects"</li>
@@ -716,13 +716,13 @@ function generateAdvancedAIResponse(query) {
 
   // Generic fallback for unclear queries
   return `
-    <div class="ai-header">🤖 I'm Here to Help You Learn About Navingna!</div>
+          <div class="ai-header">🤖 I'm Here to Help You Learn About Navigna!</div>
     
     <div class="ai-section">
       <div class="ai-section-title">💭 Not Sure What You're Looking For?</div>
-      <p>I can help you discover everything about Navingna Reddy Gangumalla. Here are some popular questions:</p>
-      <ul class="ai-list">
-        <li>"Who is Navingna?" - Get a complete overview</li>
+              <p>I can help you discover everything about Navigna Reddy Gangumalla. Here are some popular questions:</p>
+        <ul class="ai-list">
+          <li>"Who is Navigna?" - Get a complete overview</li>
         <li>"What are her technical skills?" - Programming & technologies</li>
         <li>"Tell me about her projects" - Real-world applications she's built</li>
         <li>"What achievements has she earned?" - Awards and recognition</li>
@@ -775,7 +775,7 @@ const commands = {
   'cd leadership': () => { showSection('leadership'); return '🏛️ Leadership & organizations...'; },
   'cd contact': () => { showSection('contact'); return '📞 Contact information...'; },
   clear: () => { output.innerHTML = ''; return ''; },
-  whoami: () => `👨‍💻 Navingna Reddy Gangumalla | CS+Business | Cloud Expert
+      whoami: () => `👨‍💻 Navigna Reddy Gangumalla | CS+Business | Cloud Expert
 🎓 4.0 GPA | AWS Certified | Teaching Assistant
 💼 Enterprise Software | Asset Management | Real-time Systems
 🎯 Seeking: Software Engineering, Cloud Architecture roles`,
@@ -1030,7 +1030,7 @@ function enterPortfolio() {
 input.focus();
     // Add welcome message to terminal
     setTimeout(() => {
-      addToOutput('', 'Welcome to Navingna\'s Interactive Portfolio! Type "help" to get started or try the quick options above.');
+      addToOutput('', 'Welcome to Navigna\'s Interactive Portfolio! Type "help" to get started or try the quick options above.');
     }, 500);
   }, 1000);
 }
