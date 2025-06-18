@@ -33,6 +33,217 @@ const portfolioDatabase = {
 function generateAdvancedAIResponse(query) {
   const q = query.toLowerCase();
   
+  // Greetings and basic conversational responses
+  if (q.includes('hi') || q.includes('hello') || q.includes('hey') || q === '' || q.includes('greeting')) {
+    const greetings = [
+      `
+        <div class="ai-header">👋 Hello! I'm Navingna's AI Assistant</div>
+        
+        <div class="ai-section">
+          <div class="ai-section-title">🤖 What I Can Help You With</div>
+          <div class="ai-metric">Ask about her technical skills and projects</div>
+          <div class="ai-metric">Learn about her achievements and awards</div>
+          <div class="ai-metric">Discover her leadership experience</div>
+          <div class="ai-metric">Get contact information</div>
+          <br>I'm trained specifically on <span class="ai-highlight">Navingna's portfolio data</span> and can provide detailed insights about her background and expertise.
+        </div>
+
+        <div class="ai-section">
+          <div class="ai-section-title">💬 Try Asking Me</div>
+          <ul class="ai-list">
+            <li>"What programming languages does Navingna know?"</li>
+            <li>"Tell me about her hackathon wins"</li>
+            <li>"What makes her unique as a candidate?"</li>
+            <li>"How can I contact her?"</li>
+          </ul>
+        </div>
+      `,
+      `
+        <div class="ai-header">🎯 Welcome! Ready to Learn About Navingna?</div>
+        
+        <div class="ai-section">
+          <div class="ai-section-title">⭐ Quick Highlights</div>
+          <div class="ai-metric">Perfect 4.0 GPA CS Student</div>
+          <div class="ai-metric">AWS Certified Professional</div>
+          <div class="ai-metric">Multiple Hackathon Winner</div>
+          <div class="ai-metric">Teaching 100+ Students</div>
+          <br>She's a <span class="ai-highlight">Computer Science student at ASU</span> with exceptional academic performance and real-world experience.
+        </div>
+
+        <div class="ai-section">
+          <div class="ai-section-title">🔍 What Would You Like to Know?</div>
+          <p>I can tell you about her technical projects, leadership roles, academic achievements, or anything else from her portfolio. Just ask naturally!</p>
+        </div>
+      `
+    ];
+    return greetings[Math.floor(Math.random() * greetings.length)];
+  }
+
+  // Thank you responses
+  if (q.includes('thank') || q.includes('thanks') || q.includes('appreciate')) {
+    return `
+      <div class="ai-header">😊 You're Very Welcome!</div>
+      
+      <div class="ai-section">
+        <div class="ai-section-title">🤝 Let's Keep the Conversation Going</div>
+        <p>I'm here to help you learn more about Navingna's background, skills, and experience. Feel free to ask me anything else!</p>
+        <br><span class="ai-highlight">Popular questions:</span> "What are her best projects?" or "Tell me about her leadership experience"
+      </div>
+    `;
+  }
+
+  // Who/what/where questions
+  if (q.includes('who is navingna') || q.includes('who is she') || q.includes('tell me about navingna') || q.includes('tell me about her')) {
+    return `
+      <div class="ai-header">👩‍💻 Meet Navingna Reddy Gangumalla</div>
+      
+      <div class="ai-section">
+        <div class="ai-section-title">🎓 Academic Excellence</div>
+        <div class="ai-metric">Computer Science Major at Arizona State University</div>
+        <div class="ai-metric">Perfect 4.0 GPA with Business Minor</div>
+        <div class="ai-metric">Expected Graduation: December 2026</div>
+        <br>She's maintaining <span class="ai-highlight">perfect academic performance</span> while actively involved in multiple leadership roles and real-world projects.
+      </div>
+
+      <div class="ai-section">
+        <div class="ai-section-title">💡 What Makes Her Special</div>
+        <div class="ai-metric">Multiple-time Hackathon Winner</div>
+        <div class="ai-metric">AWS Certified Solutions Architect</div>
+        <div class="ai-metric">Teaching Assistant for 100+ students</div>
+        <div class="ai-metric">Student Government Appropriations Chair</div>
+        <br>She combines <span class="ai-highlight">technical expertise with leadership skills</span> and real-world impact.
+      </div>
+    `;
+  }
+
+  // Programming/coding questions
+  if (q.includes('programming') || q.includes('coding') || q.includes('languages') || q.includes('code')) {
+    return `
+      <div class="ai-header">💻 Navingna's Programming Expertise</div>
+      
+      <div class="ai-section">
+        <div class="ai-section-title">🚀 Primary Languages</div>
+        <div class="ai-metric">Python (Advanced)</div>
+        <div class="ai-metric">Java (Advanced)</div>
+        <div class="ai-metric">JavaScript/TypeScript (Advanced)</div>
+        <div class="ai-metric">C++, C, C#, SQL (Proficient)</div>
+        <br>She has <span class="ai-highlight">production experience</span> in multiple programming paradigms and has built scalable applications.
+      </div>
+
+      <div class="ai-section">
+        <div class="ai-section-title">🛠️ Frameworks & Technologies</div>
+        <div class="ai-metric">MERN Stack (MongoDB, Express, React, Node)</div>
+        <div class="ai-metric">React.js, Angular, Flutter</div>
+        <div class="ai-metric">AWS Cloud Services</div>
+        <div class="ai-metric">Docker, Jenkins, PostgreSQL</div>
+        <br>She's particularly strong in <span class="ai-highlight">full-stack development and cloud technologies</span>.
+      </div>
+    `;
+  }
+
+  // Nice/compliment responses
+  if (q.includes('nice') || q.includes('cool') || q.includes('impressive') || q.includes('amazing') || q.includes('great')) {
+    return `
+      <div class="ai-header">😊 I'm Glad You're Impressed!</div>
+      
+      <div class="ai-section">
+        <div class="ai-section-title">🌟 She Really Is Exceptional</div>
+        <p>Navingna has worked incredibly hard to achieve this level of excellence. Her combination of technical skills, academic performance, and leadership experience is quite rare among students.</p>
+        <br><span class="ai-highlight">Want to know more?</span> Ask me about her specific projects or achievements!
+      </div>
+    `;
+  }
+
+  // Education/school questions
+  if (q.includes('education') || q.includes('school') || q.includes('university') || q.includes('college') || q.includes('gpa') || q.includes('degree')) {
+    return `
+      <div class="ai-header">🎓 Navingna's Academic Excellence</div>
+      
+      <div class="ai-section">
+        <div class="ai-section-title">🏫 Arizona State University</div>
+        <div class="ai-metric">Bachelor of Science - Computer Science</div>
+        <div class="ai-metric">Minor in Business</div>
+        <div class="ai-metric">Perfect 4.0 GPA</div>
+        <div class="ai-metric">Expected Graduation: December 2026</div>
+        <br>She's maintained <span class="ai-highlight">perfect academic performance</span> across all semesters while taking on challenging leadership roles.
+      </div>
+
+      <div class="ai-section">
+        <div class="ai-section-title">🏆 Academic Recognition</div>
+        <div class="ai-metric">Dean's List (5 consecutive semesters)</div>
+        <div class="ai-metric">$22,500+ in Merit Scholarships</div>
+        <div class="ai-metric">New American University Scholarship</div>
+        <div class="ai-metric">Garmin Scholarship Fund Recipient</div>
+        <br>Her <span class="ai-highlight">exceptional academic record</span> speaks to her dedication and intellectual capability.
+      </div>
+    `;
+  }
+
+  // Experience/work questions
+  if (q.includes('experience') || q.includes('work') || q.includes('job') || q.includes('internship') || q.includes('teaching')) {
+    return `
+      <div class="ai-header">💼 Navingna's Professional Experience</div>
+      
+      <div class="ai-section">
+        <div class="ai-section-title">👩‍🏫 Current Teaching Role</div>
+        <div class="ai-metric">Teaching Assistant - Software Engineering</div>
+        <div class="ai-metric">Arizona State University | May 2025 - Present</div>
+        <div class="ai-metric">Managing 100+ students</div>
+        <br>She delivers lectures, creates assignments, and provides <span class="ai-highlight">personalized code reviews</span> while managing Ed Discussion with 200+ threads.
+      </div>
+
+      <div class="ai-section">
+        <div class="ai-section-title">🎮 XR Technology Leadership</div>
+        <div class="ai-metric">XR Pod Operator</div>
+        <div class="ai-metric">Serving 7,000+ weekly users</div>
+        <div class="ai-metric">Managing VR/AR experiences</div>
+        <br>She oversees <span class="ai-highlight">cutting-edge technology operations</span> and helps students explore immersive learning environments.
+      </div>
+    `;
+  }
+
+  // Best/top questions
+  if (q.includes('best') || q.includes('top') || q.includes('most impressive') || q.includes('strongest')) {
+    return `
+      <div class="ai-header">⭐ Navingna's Top Accomplishments</div>
+      
+      <div class="ai-section">
+        <div class="ai-section-title">🥇 Most Impressive Achievement</div>
+        <div class="ai-metric">Multiple Hackathon Winner</div>
+        <div class="ai-metric">OpenAI Challenge Champion</div>
+        <div class="ai-metric">ASU AI Challenge Winner</div>
+        <br>Her <span class="ai-highlight">consistent hackathon victories</span> demonstrate exceptional problem-solving under pressure and innovative thinking.
+      </div>
+
+      <div class="ai-section">
+        <div class="ai-section-title">💻 Best Technical Project</div>
+        <div class="ai-metric">Ethical Policy Simulation Game</div>
+        <div class="ai-metric">200+ Active Users</div>
+        <div class="ai-metric">35% Decision Quality Improvement</div>
+        <br>This <span class="ai-highlight">award-winning project</span> combines AI, education, and social impact - showcasing her ability to create meaningful technology solutions.
+      </div>
+    `;
+  }
+
+  // Confused/unclear responses
+  if (q.includes('confused') || q.includes('unclear') || q.includes("don't understand") || q.includes('explain')) {
+    return `
+      <div class="ai-header">🤔 Let Me Help Clarify!</div>
+      
+      <div class="ai-section">
+        <div class="ai-section-title">💡 I'm Here to Help</div>
+        <p>No worries! I can explain anything about Navingna in more detail. Try asking specific questions like:</p>
+        <ul class="ai-list">
+          <li>"What projects has she worked on?"</li>
+          <li>"What are her technical skills?"</li>
+          <li>"Tell me about her achievements"</li>
+          <li>"What leadership roles has she held?"</li>
+        </ul>
+        <br><span class="ai-highlight">Feel free to ask naturally</span> - I understand conversational language!
+      </div>
+    `;
+  }
+
   // Achievements & Awards
   if (q.includes('achievement') || q.includes('award') || q.includes('honor')) {
     return `
@@ -454,47 +665,70 @@ function generateAdvancedAIResponse(query) {
     `;
   }
 
-  // help or default
-  if (q.includes('help') || q.includes('hello') || q.includes('hi')) {
+  // Help requests
+  if (q.includes('help') || q.includes('what can you do') || q.includes('how do you work')) {
     return `
-      <div class="ai-header">🧠 Advanced AI Analysis Capabilities</div>
+      <div class="ai-header">🧠 I'm Your Personal Navingna Expert!</div>
       
       <div class="ai-section">
-        <div class="ai-section-title">🔍 Available Analysis Types</div>
+        <div class="ai-section-title">💬 Natural Conversation</div>
+        <p>You can talk to me naturally! I understand questions like:</p>
         <ul class="ai-list">
-          <li><strong>Strengths Analysis:</strong> "ai strengths" or "ai unique value"</li>
-          <li><strong>Company Fit:</strong> "ai fit for [company]"</li>
-          <li><strong>Role Matching:</strong> "ai recommend roles"</li>
-          <li><strong>Project Deep-Dive:</strong> "ai analyze projects"</li>
-          <li><strong>Peer Comparison:</strong> "ai compare peers"</li>
-          <li><strong>Startup Analysis:</strong> "ai startup fit"</li>
+          <li>"Tell me about her projects"</li>
+          <li>"What programming languages does she know?"</li>
+          <li>"How can I contact Navingna?"</li>
+          <li>"What makes her unique?"</li>
         </ul>
       </div>
 
       <div class="ai-section">
-        <div class="ai-section-title">💡 Sample Advanced Queries</div>
-        <div class="ai-metric">"ai analyze readiness for senior engineer role"</div>
-        <div class="ai-metric">"ai what's navingna's competitive advantage"</div>
-        <div class="ai-metric">"ai best projects to highlight for [company]"</div>
-        <br>I provide <span class="ai-highlight">strategic insights with specific metrics</span> based on comprehensive portfolio analysis.
+        <div class="ai-section-title">🔍 Advanced Analysis (for recruiters)</div>
+        <ul class="ai-list">
+          <li><strong>Company Fit:</strong> "How would she fit at Google?"</li>
+          <li><strong>Role Matching:</strong> "What roles would be perfect for her?"</li>
+          <li><strong>Competitive Analysis:</strong> "How does she compare to other candidates?"</li>
+          <li><strong>Startup Potential:</strong> "Would she be good for a startup?"</li>
+        </ul>
+        <br><span class="ai-highlight">I provide detailed insights</span> based on her complete portfolio.
       </div>
     `;
   }
 
-  // fallback suggestions
+  // Smart fallback with context awareness
+  if (q.includes('navingna') || q.includes('she') || q.includes('her')) {
+    return `
+      <div class="ai-header">🤔 I'd Love to Help, But Need More Details</div>
+      
+      <div class="ai-section">
+        <div class="ai-section-title">💡 Could You Be More Specific?</div>
+        <p>I can tell you about many aspects of Navingna's background. Try asking about:</p>
+        <ul class="ai-list">
+          <li><strong>Technical Skills:</strong> "What programming languages does she know?"</li>
+          <li><strong>Projects:</strong> "Tell me about her best projects"</li>
+          <li><strong>Achievements:</strong> "What awards has she won?"</li>
+          <li><strong>Leadership:</strong> "What leadership roles has she held?"</li>
+          <li><strong>Contact:</strong> "How can I reach her?"</li>
+        </ul>
+        <br><span class="ai-highlight">Feel free to ask naturally</span> - I understand conversational language!
+      </div>
+    `;
+  }
+
+  // Generic fallback for unclear queries
   return `
-    <div class="ai-header">🤖 Ready for Advanced Analysis</div>
+    <div class="ai-header">🤖 I'm Here to Help You Learn About Navingna!</div>
     
     <div class="ai-section">
-      <div class="ai-section-title">💡 Try These Sophisticated Queries</div>
+      <div class="ai-section-title">💭 Not Sure What You're Looking For?</div>
+      <p>I can help you discover everything about Navingna Reddy Gangumalla. Here are some popular questions:</p>
       <ul class="ai-list">
-        <li>"ai analyze navingna's readiness for [specific role]"</li>
-        <li>"ai what's navingna's competitive advantage"</li>
-        <li>"ai best projects to highlight for [company]"</li>
-        <li>"ai compare navingna to typical product manager candidates"</li>
-        <li>"ai startup founder potential assessment"</li>
+        <li>"Who is Navingna?" - Get a complete overview</li>
+        <li>"What are her technical skills?" - Programming & technologies</li>
+        <li>"Tell me about her projects" - Real-world applications she's built</li>
+        <li>"What achievements has she earned?" - Awards and recognition</li>
+        <li>"How can I contact her?" - Get in touch information</li>
       </ul>
-      <br>I can provide <span class="ai-highlight">detailed strategic analysis</span> with specific metrics and recommendations.
+      <br><span class="ai-highlight">Just ask naturally</span> - I'm designed to understand conversational questions!
     </div>
   `;
 }
