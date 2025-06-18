@@ -450,133 +450,604 @@
     </div>
 
     <div class="portfolio-content">
-      <!-- Profile Section -->
+      <!-- Enhanced Profile Section -->
       <section class="portfolio-section">
         <div class="profile-section">
-          <h1 class="profile-name">Navigna Reddy Gangumalla</h1>
-          <p class="profile-title">Computer Science Student & Full-Stack Developer</p>
-          <p class="profile-description">
-            Motivated Computer Science student at Arizona State University with a perfect 4.0 GPA. 
-            Multiple-time hackathon winner with proven expertise in full-stack development, cloud technologies, and XR/VR systems.
-          </p>
+          <div class="profile-intro">
+            <div class="profile-text">
+              <h1 class="profile-name">Navigna Reddy Gangumalla</h1>
+              <p class="profile-title">Computer Science Student & Full-Stack Developer</p>
+              <p class="profile-description">
+                Motivated Computer Science student at Arizona State University with a perfect 4.0 GPA. 
+                Multiple-time hackathon winner with proven expertise in full-stack development, cloud technologies, and XR/VR systems.
+                Currently serving as Teaching Assistant managing 100+ students and AWS Certified Solutions Architect.
+              </p>
+              
+              <div class="profile-highlights">
+                <div class="highlight-badge">🏆 Multiple Hackathon Winner</div>
+                <div class="highlight-badge">☁️ AWS Certified</div>
+                <div class="highlight-badge">👩‍🏫 Teaching Assistant</div>
+                <div class="highlight-badge">🎓 Perfect 4.0 GPA</div>
+              </div>
+            </div>
+          </div>
           
           <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-number">4.0</div>
+            <div class="stat-card" data-animate="counter">
+              <div class="stat-number" data-target="4.0">0</div>
               <div class="stat-label">GPA</div>
+              <div class="stat-description">Perfect Academic Record</div>
             </div>
-            <div class="stat-card">
-              <div class="stat-number">7000+</div>
+            <div class="stat-card" data-animate="counter">
+              <div class="stat-number" data-target="7000">0</div>
               <div class="stat-label">Weekly XR Users</div>
+              <div class="stat-description">VR/AR Platform Management</div>
             </div>
-            <div class="stat-card">
-              <div class="stat-number">100+</div>
+            <div class="stat-card" data-animate="counter">
+              <div class="stat-number" data-target="100">0</div>
               <div class="stat-label">Students Taught</div>
+              <div class="stat-description">Software Engineering TA</div>
             </div>
-            <div class="stat-card">
-              <div class="stat-number">$22,500+</div>
-              <div class="stat-label">Scholarships</div>
+            <div class="stat-card" data-animate="counter">
+              <div class="stat-number" data-target="22500">0</div>
+              <div class="stat-label">Scholarships ($)</div>
+              <div class="stat-description">Merit-Based Awards</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Skills Section -->
+      <!-- Education & Achievements Section -->
       <section class="portfolio-section">
-        <h2>Technical Skills</h2>
+        <h2 class="section-title">
+          <span class="title-icon">🎓</span>
+          Education & Achievements
+        </h2>
+        <div class="education-grid">
+          <div class="education-card">
+            <div class="education-header">
+              <h3>Arizona State University</h3>
+              <span class="education-period">2023 - 2026</span>
+            </div>
+            <div class="education-details">
+              <p class="degree">Bachelor of Science - Computer Science</p>
+              <p class="minor">Minor: Business</p>
+              <div class="gpa-badge">
+                <span class="gpa-label">GPA:</span>
+                <span class="gpa-value">4.0/4.0</span>
+              </div>
+            </div>
+            <div class="education-achievements">
+              <h4>Academic Honors</h4>
+              <ul class="achievement-list">
+                <li><span class="achievement-icon">🏅</span> Dean's List (5 consecutive semesters)</li>
+                <li><span class="achievement-icon">💰</span> New American University Scholarship - $14,500/year</li>
+                <li><span class="achievement-icon">🎯</span> Garmin Scholarship Fund - $8,000/year</li>
+                <li><span class="achievement-icon">🏆</span> BAL PURASKAR Award - Rotary Club International</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="certifications-card">
+            <h3>Certifications & Training</h3>
+            <div class="cert-list">
+              <div class="cert-item">
+                <div class="cert-icon">☁️</div>
+                <div class="cert-details">
+                  <h4>AWS Certified Solutions Architect - Associate</h4>
+                  <p>July 2025 | Advanced cloud architecture & deployment</p>
+                </div>
+              </div>
+              <div class="cert-item">
+                <div class="cert-icon">☁️</div>
+                <div class="cert-details">
+                  <h4>AWS Certified Cloud Practitioner</h4>
+                  <p>May 2025 | Cloud fundamentals & best practices</p>
+                </div>
+              </div>
+              <div class="cert-item">
+                <div class="cert-icon">📊</div>
+                <div class="cert-details">
+                  <h4>MATLAB Onramp - MathWorks</h4>
+                  <p>March 2025 | Data analysis & visualization</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="transcript-section">
+              <h4>Academic Records</h4>
+              <a href="https://drive.google.com/file/d/1Z4b6BQ-DHIVJ7PByUeIXYmazTllbnQXr/view?usp=sharing" 
+                 target="_blank" 
+                 class="transcript-link">
+                <span class="transcript-icon">📄</span>
+                View Official Transcript
+                <span class="external-link-icon">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Enhanced Skills Section -->
+      <section class="portfolio-section">
+        <h2 class="section-title">
+          <span class="title-icon">💻</span>
+          Technical Expertise
+        </h2>
         <div class="skills-showcase">
-          <div class="skill-category">
-            <div class="skill-icon">💻</div>
-            <h4>Programming</h4>
-            <p>Python, Java, JavaScript, TypeScript, C++, C, C#, SQL</p>
+          <div class="skill-category" data-category="programming">
+            <div class="skill-header">
+              <div class="skill-icon">💻</div>
+              <h4>Programming Languages</h4>
+              <span class="skill-count">8 Languages</span>
+            </div>
+            <div class="skill-details">
+              <div class="skill-tags">
+                <span class="skill-tag advanced">Python</span>
+                <span class="skill-tag advanced">Java</span>
+                <span class="skill-tag advanced">JavaScript</span>
+                <span class="skill-tag advanced">TypeScript</span>
+                <span class="skill-tag intermediate">C++</span>
+                <span class="skill-tag intermediate">C</span>
+                <span class="skill-tag intermediate">C#</span>
+                <span class="skill-tag advanced">SQL</span>
+              </div>
+              <div class="skill-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" data-width="92%"></div>
+                </div>
+                <span class="proficiency-label">Expert Level</span>
+              </div>
+            </div>
           </div>
-          <div class="skill-category">
-            <div class="skill-icon">🌐</div>
-            <h4>Web Development</h4>
-            <p>React.js, Angular, Node.js, Express, HTML5, CSS3, Tailwind</p>
+          
+          <div class="skill-category" data-category="web">
+            <div class="skill-header">
+              <div class="skill-icon">🌐</div>
+              <h4>Web Development</h4>
+              <span class="skill-count">10+ Technologies</span>
+            </div>
+            <div class="skill-details">
+              <div class="skill-tags">
+                <span class="skill-tag advanced">React.js</span>
+                <span class="skill-tag intermediate">Angular</span>
+                <span class="skill-tag advanced">Node.js</span>
+                <span class="skill-tag advanced">Express</span>
+                <span class="skill-tag advanced">HTML5</span>
+                <span class="skill-tag advanced">CSS3</span>
+                <span class="skill-tag intermediate">Tailwind</span>
+                <span class="skill-tag intermediate">Vue.js</span>
+              </div>
+              <div class="skill-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" data-width="88%"></div>
+                </div>
+                <span class="proficiency-label">Advanced Level</span>
+              </div>
+            </div>
           </div>
-          <div class="skill-category">
-            <div class="skill-icon">☁️</div>
-            <h4>Cloud & DevOps</h4>
-            <p>AWS (Lambda, S3, EC2, RDS), Docker, Jenkins, Azure</p>
+          
+          <div class="skill-category" data-category="cloud">
+            <div class="skill-header">
+              <div class="skill-icon">☁️</div>
+              <h4>Cloud & DevOps</h4>
+              <span class="skill-count">AWS Certified</span>
+            </div>
+            <div class="skill-details">
+              <div class="skill-tags">
+                <span class="skill-tag advanced">AWS Lambda</span>
+                <span class="skill-tag advanced">AWS S3</span>
+                <span class="skill-tag advanced">AWS EC2</span>
+                <span class="skill-tag advanced">AWS RDS</span>
+                <span class="skill-tag intermediate">Docker</span>
+                <span class="skill-tag intermediate">Jenkins</span>
+                <span class="skill-tag intermediate">Azure</span>
+              </div>
+              <div class="skill-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" data-width="85%"></div>
+                </div>
+                <span class="proficiency-label">Certified Professional</span>
+              </div>
+            </div>
           </div>
-          <div class="skill-category">
-            <div class="skill-icon">📱</div>
-            <h4>Mobile & App</h4>
-            <p>Flutter, Swift, Kotlin, React Native, Android Studio</p>
+          
+          <div class="skill-category" data-category="mobile">
+            <div class="skill-header">
+              <div class="skill-icon">📱</div>
+              <h4>Mobile & App Development</h4>
+              <span class="skill-count">Cross-Platform</span>
+            </div>
+            <div class="skill-details">
+              <div class="skill-tags">
+                <span class="skill-tag advanced">Flutter</span>
+                <span class="skill-tag intermediate">Swift</span>
+                <span class="skill-tag intermediate">Kotlin</span>
+                <span class="skill-tag intermediate">React Native</span>
+                <span class="skill-tag intermediate">Android Studio</span>
+                <span class="skill-tag beginner">Dart</span>
+              </div>
+              <div class="skill-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" data-width="75%"></div>
+                </div>
+                <span class="proficiency-label">Proficient Level</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category" data-category="database">
+            <div class="skill-header">
+              <div class="skill-icon">🗄️</div>
+              <h4>Databases & Storage</h4>
+              <span class="skill-count">Multi-Database</span>
+            </div>
+            <div class="skill-details">
+              <div class="skill-tags">
+                <span class="skill-tag advanced">PostgreSQL</span>
+                <span class="skill-tag advanced">MySQL</span>
+                <span class="skill-tag advanced">MongoDB</span>
+                <span class="skill-tag intermediate">DynamoDB</span>
+                <span class="skill-tag intermediate">Redis</span>
+                <span class="skill-tag intermediate">H2</span>
+              </div>
+              <div class="skill-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" data-width="82%"></div>
+                </div>
+                <span class="proficiency-label">Advanced Level</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category" data-category="tools">
+            <div class="skill-header">
+              <div class="skill-icon">🛠️</div>
+              <h4>Development Tools</h4>
+              <span class="skill-count">Professional Suite</span>
+            </div>
+            <div class="skill-details">
+              <div class="skill-tags">
+                <span class="skill-tag advanced">VS Code</span>
+                <span class="skill-tag advanced">GitHub</span>
+                <span class="skill-tag intermediate">Eclipse</span>
+                <span class="skill-tag intermediate">Postman</span>
+                <span class="skill-tag intermediate">Jira</span>
+                <span class="skill-tag advanced">Tableau</span>
+                <span class="skill-tag intermediate">Power BI</span>
+              </div>
+              <div class="skill-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" data-width="90%"></div>
+                </div>
+                <span class="proficiency-label">Expert Level</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects Section -->
+      <!-- Enhanced Projects Section -->
       <section class="portfolio-section">
-        <h2>Featured Projects</h2>
-        <div class="portfolio-grid two-col">
-          <div class="portfolio-card featured">
-            <h3>AI Challenge: Ethical Policy Simulation Game</h3>
-            <p><strong>Winner - OpenAI Challenge</strong></p>
-            <p>Architected a browser-based simulation engaging 200+ users in refugee-education budgeting, improving decision quality by 35%.</p>
-            <ul>
-              <li>React.js, Node.js, GPT-3.5, AWS SES</li>
-              <li>Multimodal UX with Web Speech API</li>
-              <li>Real-time WebSocket voting system</li>
-            </ul>
+        <h2 class="section-title">
+          <span class="title-icon">🚀</span>
+          Featured Projects & Achievements
+        </h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-card featured hackathon-winner">
+            <div class="project-header">
+              <div class="project-status">
+                <span class="status-badge winner">🏆 Hackathon Winner</span>
+                <span class="status-badge openai">OpenAI Challenge 2024</span>
+              </div>
+              <h3>AI Challenge: Ethical Policy Simulation Game</h3>
+            </div>
+            <div class="project-content">
+              <p class="project-description">
+                Architected a browser-based simulation engaging 200+ users in refugee-education budgeting, 
+                improving decision quality by 35%. This award-winning project combines AI ethics with interactive learning.
+              </p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <span class="metric-number">200+</span>
+                  <span class="metric-label">Active Users</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-number">35%</span>
+                  <span class="metric-label">Quality Improvement</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-number">1st</span>
+                  <span class="metric-label">Place Winner</span>
+                </div>
+              </div>
+              <div class="tech-stack">
+                <h5>Tech Stack:</h5>
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">GPT-3.5</span>
+                <span class="tech-tag">AWS SES</span>
+                <span class="tech-tag">Web Speech API</span>
+                <span class="tech-tag">WebSocket</span>
+              </div>
+            </div>
           </div>
+          
           <div class="portfolio-card">
-            <h3>Biking Paths Finder</h3>
-            <p>Full-stack web application for cyclists with personalized route optimization.</p>
-            <ul>
-              <li>FastAPI, GraphQL, MongoDB</li>
-              <li>Google Maps Platform integration</li>
-              <li>OAuth 2.0 authentication</li>
-            </ul>
+            <div class="project-header">
+              <h3>Biking Paths Finder</h3>
+              <div class="project-type">Full-Stack Application</div>
+            </div>
+            <div class="project-content">
+              <p class="project-description">
+                Intelligent route optimization platform for cyclists with personalized recommendations, 
+                real-time traffic integration, and social features for the cycling community.
+              </p>
+              <div class="project-features">
+                <div class="feature-item">🗺️ Google Maps Integration</div>
+                <div class="feature-item">🔐 OAuth 2.0 Security</div>
+                <div class="feature-item">📊 Real-time Analytics</div>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">GraphQL</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Google Maps API</span>
+              </div>
+            </div>
           </div>
+          
           <div class="portfolio-card">
-            <h3>Scalable Content Delivery System</h3>
-            <p>Docker containerized microservices system for concurrent user requests.</p>
-            <ul>
-              <li>Java, Spring Boot, Redis, PostgreSQL</li>
-              <li>AWS EC2 & S3 deployment</li>
-              <li>Performance monitoring dashboard</li>
-            </ul>
+            <div class="project-header">
+              <h3>Scalable Content Delivery System</h3>
+              <div class="project-type">Enterprise System</div>
+            </div>
+            <div class="project-content">
+              <p class="project-description">
+                Docker containerized microservices architecture handling thousands of concurrent requests 
+                with automated scaling and comprehensive monitoring dashboard.
+              </p>
+              <div class="project-features">
+                <div class="feature-item">🐳 Docker Containerization</div>
+                <div class="feature-item">☁️ AWS Cloud Deployment</div>
+                <div class="feature-item">📈 Performance Monitoring</div>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Spring Boot</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">AWS EC2</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+            </div>
           </div>
+          
           <div class="portfolio-card">
-            <h3>Real-Time Study Group Platform</h3>
-            <p>Collaborative platform supporting 50+ concurrent users with WebSocket connections.</p>
-            <ul>
-              <li>React, Node.js, Socket.io, WebRTC</li>
-              <li>Live document sharing</li>
-              <li>Video chat functionality</li>
-            </ul>
+            <div class="project-header">
+              <h3>Real-Time Study Group Platform</h3>
+              <div class="project-type">Collaborative Platform</div>
+            </div>
+            <div class="project-content">
+              <p class="project-description">
+                Comprehensive collaborative learning platform supporting 50+ concurrent users with 
+                real-time document editing, video conferencing, and interactive whiteboards.
+              </p>
+              <div class="project-features">
+                <div class="feature-item">📹 Video Chat Integration</div>
+                <div class="feature-item">📝 Live Document Sharing</div>
+                <div class="feature-item">🎨 Interactive Whiteboard</div>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Socket.io</span>
+                <span class="tech-tag">WebRTC</span>
+                <span class="tech-tag">Canvas API</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Professional Experience Section -->
+      <section class="portfolio-section">
+        <h2 class="section-title">
+          <span class="title-icon">💼</span>
+          Professional Experience
+        </h2>
+        <div class="experience-timeline">
+          <div class="timeline-item current">
+            <div class="timeline-marker">
+              <div class="marker-dot active"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="experience-header">
+                <h3>Teaching Assistant - Software Engineering</h3>
+                <span class="company">Arizona State University</span>
+                <span class="duration">May 2025 - Present</span>
+              </div>
+              <div class="experience-details">
+                <p class="role-description">
+                  Leading educational excellence for 100+ computer science students in advanced software engineering concepts,
+                  managing comprehensive learning management systems, and providing personalized code reviews.
+                </p>
+                <div class="responsibilities">
+                  <h5>Key Responsibilities:</h5>
+                  <ul>
+                    <li>📚 Deliver lectures and create assignments for software engineering fundamentals</li>
+                    <li>💻 Provide detailed code reviews and debugging assistance</li>
+                    <li>🎯 Manage Ed Discussion platform with 200+ threads weekly</li>
+                    <li>📊 Develop assessment strategies and grading rubrics</li>
+                  </ul>
+                </div>
+                <div class="impact-metrics">
+                  <div class="impact-item">
+                    <span class="impact-number">100+</span>
+                    <span class="impact-label">Students Managed</span>
+                  </div>
+                  <div class="impact-item">
+                    <span class="impact-number">200+</span>
+                    <span class="impact-label">Weekly Discussions</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="experience-header">
+                <h3>XR Pod Operator</h3>
+                <span class="company">Arizona State University</span>
+                <span class="duration">January 2025 - Present</span>
+              </div>
+              <div class="experience-details">
+                <p class="role-description">
+                  Managing cutting-edge VR/AR experiences for 7,000+ weekly users, overseeing technology operations,
+                  and facilitating immersive learning environments across multiple academic disciplines.
+                </p>
+                <div class="responsibilities">
+                  <h5>Key Achievements:</h5>
+                  <ul>
+                    <li>🥽 Operating state-of-the-art VR/AR equipment daily</li>
+                    <li>👥 Serving 7,000+ users weekly across campus</li>
+                    <li>🔧 Troubleshooting and maintaining XR technology</li>
+                    <li>📈 Optimizing user experience and system performance</li>
+                  </ul>
+                </div>
+                <div class="impact-metrics">
+                  <div class="impact-item">
+                    <span class="impact-number">7,000+</span>
+                    <span class="impact-label">Weekly Users</span>
+                  </div>
+                  <div class="impact-item">
+                    <span class="impact-number">99%</span>
+                    <span class="impact-label">Uptime</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="experience-header">
+                <h3>Appropriations Chair</h3>
+                <span class="company">Undergraduate Student Government</span>
+                <span class="duration">September 2024 - Present</span>
+              </div>
+              <div class="experience-details">
+                <p class="role-description">
+                  Leading financial oversight and strategic funding decisions for student organizations, 
+                  managing substantial budgets for travel and professional development initiatives.
+                </p>
+                <div class="responsibilities">
+                  <h5>Leadership Impact:</h5>
+                  <ul>
+                    <li>💰 Overseeing substantial funding allocations</li>
+                    <li>✈️ Managing travel and professional development funds</li>
+                    <li>📋 Conducting budget reviews and presentations</li>
+                    <li>🤝 Collaborating with diverse student organizations</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Contact Section -->
+      <!-- Enhanced Contact Section -->
       <section class="portfolio-section">
-        <h2>Get In Touch</h2>
+        <h2 class="section-title">
+          <span class="title-icon">📞</span>
+          Get In Touch
+        </h2>
+        <div class="contact-intro">
+          <p>Ready to collaborate on exciting projects or discuss opportunities? I'm always open to connecting with fellow developers, potential employers, and innovative teams.</p>
+        </div>
+        
         <div class="contact-grid">
-          <div class="contact-card">
+          <div class="contact-card primary">
             <div class="contact-icon">📧</div>
-            <h4>Email</h4>
-            <p>nganguma@asu.edu</p>
+            <h4>Primary Email</h4>
+            <a href="mailto:nganguma@asu.edu" class="contact-link">
+              nganguma@asu.edu
+            </a>
+            <p class="contact-note">Preferred for academic & professional inquiries</p>
           </div>
-          <div class="contact-card">
+          
+          <div class="contact-card secondary">
+            <div class="contact-icon">📮</div>
+            <h4>Personal Email</h4>
+            <a href="mailto:gnavignareddy@gmail.com" class="contact-link">
+              gnavignareddy@gmail.com
+            </a>
+            <p class="contact-note">Alternative contact method</p>
+          </div>
+          
+          <div class="contact-card social">
             <div class="contact-icon">💼</div>
             <h4>LinkedIn</h4>
-            <p>linkedin.com/in/navignareddy</p>
+            <a href="https://www.linkedin.com/in/navignareddy/" target="_blank" class="contact-link social-link">
+              <span>linkedin.com/in/navignareddy</span>
+              <span class="external-icon">↗</span>
+            </a>
+            <p class="contact-note">Professional network & career updates</p>
           </div>
-          <div class="contact-card">
+          
+          <div class="contact-card social">
             <div class="contact-icon">💻</div>
             <h4>GitHub</h4>
-            <p>github.com/navignareddy</p>
+            <a href="https://github.com/navignareddy" target="_blank" class="contact-link social-link">
+              <span>github.com/navignareddy</span>
+              <span class="external-icon">↗</span>
+            </a>
+            <p class="contact-note">Open source projects & code portfolio</p>
           </div>
         </div>
         
-        <div class="resume-download">
-          <button class="resume-btn" onclick="downloadResume()">
-            Download Resume PDF
-          </button>
+        <div class="contact-actions">
+          <div class="action-group">
+            <button class="resume-btn primary" onclick="downloadResume()">
+              <span class="btn-icon">📄</span>
+              Download Resume PDF
+            </button>
+            
+            <a href="https://drive.google.com/file/d/1Z4b6BQ-DHIVJ7PByUeIXYmazTllbnQXr/view?usp=sharing" 
+               target="_blank" 
+               class="resume-btn secondary">
+              <span class="btn-icon">📊</span>
+              View Official Transcript
+              <span class="external-icon">↗</span>
+            </a>
+          </div>
+          
+          <div class="response-commitment">
+            <div class="commitment-badge">
+              <span class="commitment-icon">⚡</span>
+              <span class="commitment-text">Usually responds within 24 hours</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="availability-status">
+          <div class="status-indicator">
+            <div class="status-dot available"></div>
+            <span class="status-text">Available for new opportunities</span>
+          </div>
+          <p class="availability-note">
+            Currently seeking summer 2025 internships and full-time opportunities starting December 2026.
+            Open to software engineering, cloud development, and AI/ML research positions.
+          </p>
         </div>
       </section>
     </div>

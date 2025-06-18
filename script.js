@@ -1069,3 +1069,199 @@ enterPortfolio = function() {
   showMainContent();
   originalEnterPortfolio();
 };
+
+// Enhanced Traditional Portfolio JavaScript Functions
+
+// Counter Animation for Stats
+function animateCounters() {
+  const counters = document.querySelectorAll('[data-animate="counter"] .stat-number');
+  
+  counters.forEach(counter => {
+    const target = parseFloat(counter.getAttribute('data-target'));
+    const increment = target / 100; // Animate over 100 steps
+    let current = 0;
+    
+    const updateCounter = () => {
+      current += increment;
+      if (current < target) {
+        if (target === 4.0) {
+          counter.textContent = current.toFixed(1);
+        } else {
+          counter.textContent = Math.floor(current);
+        }
+        requestAnimationFrame(updateCounter);
+      } else {
+        if (target === 4.0) {
+          counter.textContent = '4.0';
+        } else if (target >= 1000) {
+          counter.textContent = Math.floor(target).toLocaleString() + '+';
+        } else {
+          counter.textContent = Math.floor(target);
+        }
+      }
+    };
+    
+    // Start animation after a short delay
+    setTimeout(updateCounter, 500);
+  });
+}
+
+// Progress Bar Animation
+function animateProgressBars() {
+  const progressBars = document.querySelectorAll('.progress-fill');
+  
+  progressBars.forEach(bar => {
+    const width = bar.getAttribute('data-width');
+    setTimeout(() => {
+      bar.style.setProperty('--target-width', width);
+      bar.style.width = width;
+    }, 1000);
+  });
+}
+
+// Enhanced Portfolio Functions
+function openTraditionalPortfolio() {
+  const portfolio = document.getElementById('traditionalPortfolio');
+  if (portfolio) {
+    portfolio.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Trigger animations after portfolio opens
+    setTimeout(() => {
+      animateCounters();
+      animateProgressBars();
+      animateOnScroll();
+    }, 300);
+  }
+}
+
+function closeTraditionalPortfolio() {
+  const portfolio = document.getElementById('traditionalPortfolio');
+  if (portfolio) {
+    portfolio.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+}
+
+// Scroll-triggered animations for portfolio sections
+function animateOnScroll() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe all portfolio sections
+  const sections = document.querySelectorAll('.portfolio-section, .skill-category, .portfolio-card, .timeline-item');
+  sections.forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    observer.observe(section);
+  });
+}
+
+// Enhanced skill category hover effects
+function initializeSkillInteractions() {
+  const skillCategories = document.querySelectorAll('.skill-category');
+  
+  skillCategories.forEach(category => {
+    category.addEventListener('mouseenter', () => {
+      const progressBar = category.querySelector('.progress-fill');
+      if (progressBar) {
+        progressBar.style.transform = 'scaleX(1.05)';
+      }
+    });
+    
+    category.addEventListener('mouseleave', () => {
+      const progressBar = category.querySelector('.progress-fill');
+      if (progressBar) {
+        progressBar.style.transform = 'scaleX(1)';
+      }
+    });
+  });
+}
+
+// Initialize enhanced portfolio features
+document.addEventListener('DOMContentLoaded', () => {
+  initializeSkillInteractions();
+  
+  // Add smooth scrolling for traditional portfolio
+  const traditionalPortfolio = document.getElementById('traditionalPortfolio');
+  if (traditionalPortfolio) {
+    traditionalPortfolio.style.scrollBehavior = 'smooth';
+  }
+});
+
+// Update existing swipe gesture handling for enhanced portfolio
+// Note: startY, currentY, isDragging already declared above
+
+document.addEventListener('touchstart', (e) => {
+  startY = e.touches[0].clientY;
+  isDragging = true;
+});
+
+document.addEventListener('touchmove', (e) => {
+  if (!isDragging) return;
+  currentY = e.touches[0].clientY;
+});
+
+document.addEventListener('touchend', () => {
+  if (!isDragging) return;
+  isDragging = false;
+  
+  const deltaY = startY - currentY;
+  const traditionalPortfolio = document.getElementById('traditionalPortfolio');
+  
+  // Swipe up to open traditional portfolio
+  if (deltaY > 50 && !traditionalPortfolio?.classList.contains('active')) {
+    openTraditionalPortfolio();
+  }
+  
+  // Swipe down to close traditional portfolio
+  if (deltaY < -50 && traditionalPortfolio?.classList.contains('active')) {
+    closeTraditionalPortfolio();
+  }
+});
+
+// Keyboard navigation for traditional portfolio
+document.addEventListener('keydown', (e) => {
+  const traditionalPortfolio = document.getElementById('traditionalPortfolio');
+  
+  if (e.key === 'Escape' && traditionalPortfolio?.classList.contains('active')) {
+    closeTraditionalPortfolio();
+  }
+  
+  if (e.key === 'ArrowUp' && e.ctrlKey && !traditionalPortfolio?.classList.contains('active')) {
+    e.preventDefault();
+    openTraditionalPortfolio();
+  }
+});
+
+// Enhanced contact card interactions
+function initializeContactInteractions() {
+  const contactCards = document.querySelectorAll('.contact-card');
+  
+  contactCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-8px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+}
+
+// Initialize all enhanced interactions
+window.addEventListener('load', () => {
+  initializeContactInteractions();
+});
