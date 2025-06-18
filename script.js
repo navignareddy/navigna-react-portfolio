@@ -774,7 +774,12 @@ const commands = {
   'cd experience': () => { showSection('experience'); return '💼 Professional timeline...'; },
   'cd leadership': () => { showSection('leadership'); return '🏛️ Leadership & organizations...'; },
   'cd contact': () => { showSection('contact'); return '📞 Contact information...'; },
-  clear: () => { output.innerHTML = ''; return ''; },
+      clear: () => { 
+      // Only clear dynamic terminal output, preserve welcome message and static elements
+      const outputLines = output.querySelectorAll('.terminal-line');
+      outputLines.forEach(line => line.remove());
+      return 'Terminal output cleared (static elements preserved)'; 
+    },
       whoami: () => `👨‍💻 Navigna Reddy Gangumalla | CS+Business | Cloud Expert
 🎓 4.0 GPA | AWS Certified | Teaching Assistant
 💼 Enterprise Software | Asset Management | Real-time Systems
@@ -845,7 +850,7 @@ function processCommand(commandText) {
     }
     if (args[0] === 'chat') {
       openAIChat();
-      return { result: '🤖 Opening AI chat interface...', isAI: false };
+      return { result: '🤖 Opening AI chatbot interface...', isAI: false };
     }
     showTyping();
     setTimeout(() => {
