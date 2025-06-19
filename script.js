@@ -916,11 +916,61 @@ input.addEventListener('keypress', e => {
 function openAIChat() {
   aiModal.classList.add('show');
   aiInput.focus();
+  // Hide the helper bubble when chatbot is opened
+  const helper = document.getElementById('chatbotHelper');
+  if (helper) {
+    helper.classList.add('hidden');
+  }
 }
 function closeAIChat() {
   aiModal.classList.remove('show');
   input.focus();
 }
+
+function closeChatbotHelper() {
+  document.getElementById('chatbotHelper').classList.add('hidden');
+}
+
+// Theme toggle functionality
+function toggleTheme() {
+  const body = document.body;
+  const themeIcon = document.getElementById('themeIcon');
+  const toggleThumb = document.getElementById('toggleThumb');
+  const isLightMode = body.classList.contains('light-mode');
+  
+  // Add a little bounce effect
+  toggleThumb.style.transform = isLightMode ? 'scale(0.9)' : 'translateX(30px) scale(0.9)';
+  
+  setTimeout(() => {
+    if (isLightMode) {
+      // Switch to dark mode
+      body.classList.remove('light-mode');
+      themeIcon.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      // Switch to light mode
+      body.classList.add('light-mode');
+      themeIcon.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    }
+    
+    // Reset transform
+    toggleThumb.style.transform = '';
+  }, 100);
+}
+
+// Load saved theme on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  const themeIcon = document.getElementById('themeIcon');
+  
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+    themeIcon.textContent = '☀️';
+  } else {
+    themeIcon.textContent = '🌙';
+  }
+});
 function sendAIMessage() {
   const message = aiInput.value.trim();
   if (!message) return;

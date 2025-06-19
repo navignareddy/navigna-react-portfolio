@@ -47,9 +47,24 @@
 
   <header class="header">
     <h1>navignareddy@portfolio:~$</h1>
-    <div class="status">
-      <div class="ai-indicator"></div>
-      Online | Open to work
+    <div class="header-controls">
+      <div class="theme-toggle-container" title="Toggle Dark/Light Mode">
+        <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+          <div class="toggle-track">
+            <div class="toggle-thumb" id="toggleThumb">
+              <span class="theme-icon" id="themeIcon">🌙</span>
+            </div>
+            <div class="toggle-background">
+              <span class="mode-label dark-label">🌙</span>
+              <span class="mode-label light-label">☀️</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="status">
+        <div class="ai-indicator"></div>
+        Online | Open to work
+      </div>
     </div>
   </header>
 
@@ -105,7 +120,15 @@
           <div class="terminal-input-line">
             <span class="prompt">~$</span>
             <input type="text" class="terminal-input" id="commandInput" placeholder="Type command or ask AI..." autofocus>
-            <button class="ai-button" onclick="openAIChat()">Chatbot</button>
+            <div class="chatbot-container">
+              <button class="ai-button" onclick="openAIChat()">Chatbot</button>
+              <div class="chatbot-helper" id="chatbotHelper">
+                <div class="helper-bubble">
+                  <div class="helper-text">Hi there! 👋 I'm Nuty, Navigna's AI assistant! How can I help you today?</div>
+                  <button class="helper-close" onclick="closeChatbotHelper()">×</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -433,7 +456,7 @@
                 <li>Portfolio: Interactive project showcases</li>
               </ul>
               <br>
-              <button onclick="downloadResume()" class="resume-btn" style="background: linear-gradient(135deg, #4285f4, #34a853); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
+              <button onclick="downloadResume()" class="resume-btn" style="background: linear-gradient(135deg, #1e40af, #34a853); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
                 Download Resume PDF
               </button>
             </div>
