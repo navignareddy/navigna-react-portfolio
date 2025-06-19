@@ -9,40 +9,38 @@
 </head>
 
 <body>
-  <!-- Start Page / Welcome Screen -->
+    <!-- Start Page / Welcome Screen -->
   <div class="start-page" id="startPage">
-    <div class="start-content">
-      <div class="profile-container">
-        <!-- Profile circle removed for cleaner look -->
+    <div class="terminal-window">
+      <div class="title-bar">
+        <div class="window-controls">
+          <div class="control close"></div>
+          <div class="control minimize"></div>
+          <div class="control maximize"></div>
+        </div>
+        <div class="title">Portfolio Terminal</div>
       </div>
       
-      <div class="welcome-text">
-        <h1 class="welcome-title">Welcome to</h1>
-        <h2 class="portfolio-owner">Navigna Reddy Gangumalla's</h2>
-        <h3 class="portfolio-subtitle">Interactive Portfolio</h3>
-        
-        <div class="achievement-badges">
-          <button class="badge" onclick="enterPortfolioSection('education')">4.0 GPA</button>
-          <button class="badge" onclick="enterPortfolioSection('projects')">Hackathon Winner</button>
-          <button class="badge" onclick="enterPortfolioSection('skills')">AWS Certified</button>
-          <button class="badge" onclick="enterPortfolioSection('projects')">Full-Stack Developer</button>
+      <div class="content">
+        <div class="left-section">
+          <div class="photo-container">
+            <div class="photo" style="background-image: url('pic.png'); background-size: cover; background-position: center;"></div>
+            <div class="photo-caption">Hi there!!! 👋<br>Living on caffeine and clean commits ☕✨</div>
+          </div>
         </div>
         
-        <div class="start-buttons">
-          <button class="start-btn primary" onclick="enterPortfolio()">
-            <span class="btn-text">Enter Portfolio</span>
-          </button>
+        <div class="right-section">
+          <div class="laptop-emoji">💻</div>
+          
+          <h1 class="name">Navigna<br>Reddy<br>Gangumalla</h1>
+          
+          <p class="subtitle">Computer Science Major | Business Minor</p>
+          <p class="description">Software Engineer | Full Stack Developer | AWS Certified</p>
+          
+          <button class="explore-btn" onclick="explorePortfolio()">Explore more</button>
+          
+          <div class="mouse-emoji">🖱️</div>
         </div>
-
-      </div>
-      
-      <div class="floating-elements">
-        <div class="floating-icon" style="--delay: 0s">{ }</div>
-        <div class="floating-icon" style="--delay: 1s">CODE</div>
-        <div class="floating-icon" style="--delay: 2s">&lt;/&gt;</div>
-        <div class="floating-icon" style="--delay: 3s">API</div>
-        <div class="floating-icon" style="--delay: 4s">DEV</div>
-        <div class="floating-icon" style="--delay: 5s">SWE</div>
       </div>
     </div>
   </div>

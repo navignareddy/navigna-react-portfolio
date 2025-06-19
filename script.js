@@ -988,6 +988,19 @@ input.focus();
   }, 1000);
 }
 
+function explorePortfolio() {
+  startPage.classList.add('hidden');
+  setTimeout(() => {
+    startPage.style.display = 'none';
+    showMainContent();
+    input.focus();
+    // Add welcome message to terminal
+    setTimeout(() => {
+      addToOutput('', 'Welcome to Navigna\'s Interactive Portfolio! Type "help" to get started or try the quick options above.');
+    }, 500);
+  }, 1000);
+}
+
 // Start page event listeners
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && !startPage.classList.contains('hidden')) {
