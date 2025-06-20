@@ -584,6 +584,31 @@ body {
   font-size: 14px; 
   font-weight: 500;
 }
+
+/* Terminal Command Display for Sections */
+.terminal-command-display {
+  background: rgba(30,64,175,0.05);
+  border-left: 3px solid #1e40af;
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Courier New', monospace;
+}
+
+.terminal-command-display .prompt {
+  color: #569cd6;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.terminal-command-display .command {
+  color: #9cdcfe;
+  font-size: 14px;
+  font-weight: 500;
+}
 .output { 
   color: #d4d4d4; 
   white-space: pre-wrap; 
@@ -759,24 +784,29 @@ body {
 .terminal-input-line {
   display: flex;
   align-items: center;
-  padding: 12px 0;
+  padding: 8px 0;
   border-top: 1px solid #404040;
-  margin-top: 16px;
+  margin-top: 12px;
+  min-height: 32px;
 }
 .terminal-input {
   flex: 1;
   background: transparent;
   border: none;
-  color: #d4d4d4;
+  color: #9cdcfe;
   font-family: inherit;
   font-size: 14px;
   outline: none;
-  padding: 8px;
+  padding: 0;
   margin-left: 8px;
+  font-weight: 500;
+  border-radius: 0;
+  min-height: auto;
 }
 .terminal-input::placeholder { 
-  color: #9aa0a6; 
+  color: #5f6368; 
   font-style: italic;
+  font-weight: 400;
 }
 .ai-button {
   background: linear-gradient(135deg, #569cd6, #4a90e2);
@@ -926,12 +956,28 @@ body {
 .light-mode .success { color: #000000; }
 .light-mode .warning { color: #000000; }
 
+/* Light mode terminal command display */
+.light-mode .terminal-command-display {
+  background: rgba(30,64,175,0.1);
+  border-left-color: #1e40af;
+}
+
+.light-mode .terminal-command-display .prompt {
+  color: #1e40af;
+}
+
+.light-mode .terminal-command-display .command {
+  color: #0d47a1;
+}
+
 .light-mode .terminal-input {
-  color: #000000;
+  color: #0d47a1;
+  font-weight: 500;
 }
 
 .light-mode .terminal-input::placeholder {
-  color: #000000;
+  color: #5f6368;
+  font-weight: 400;
 }
 
 .light-mode .terminal-input-line {
@@ -1288,6 +1334,131 @@ body {
   color: #34a853;
 }
 
+/* Light mode for simple skills section */
+.light-mode .skill-group {
+  background: #f8f9fa;
+  border: 1px solid #d1d5db;
+  color: #000000;
+}
+
+.light-mode .skill-group:hover {
+  background: #ffffff;
+  border-color: #9ca3af;
+}
+
+.light-mode .skill-group h4 {
+  color: #1e40af;
+}
+
+.light-mode .skill-group p {
+  color: #374151;
+}
+
+/* Project features bullet points styling */
+.project-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-features li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  color: #e8eaed;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.project-features li::before {
+  content: '•';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  color: #34a853;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Light mode for project features */
+.light-mode .project-features li {
+  color: #374151;
+}
+
+.light-mode .project-features li::before {
+  color: #1e40af;
+}
+
+/* Academic honors bullet points styling */
+.achievement-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.achievement-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: #e8eaed;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.achievement-list li::before {
+  content: '•';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  color: #34a853;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Light mode for academic honors */
+.light-mode .achievement-list li {
+  color: #374151;
+}
+
+.light-mode .achievement-list li::before {
+  color: #1e40af;
+}
+
+/* Professional experience bullet points styling */
+.responsibilities ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.responsibilities li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  color: #e8eaed;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.responsibilities li::before {
+  content: '•';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  color: #34a853;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Light mode for experience bullet points */
+.light-mode .responsibilities li {
+  color: #374151;
+}
+
+.light-mode .responsibilities li::before {
+  color: #1e40af;
+}
+
 /* Content Container */
 .content-container {
   width: 0; height: 100%; overflow: hidden; transition: width 0.3s ease;
@@ -1434,12 +1605,40 @@ body {
 }
 .portfolio-card.featured h3 { color:#1e40af; }
 
-/* Skills Showcase */
-.skills-showcase { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-  gap: 25px;
-  margin-bottom: 40px;
+/* Simple Skills Section */
+.skills-simple {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skill-group {
+  background: rgba(248,249,250,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.skill-group:hover {
+  background: rgba(248,249,250,0.08);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.skill-group h4 {
+  color: #34a853;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+}
+
+.skill-group p {
+  color: #e8eaed;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
 }
 
 /* Enhanced Skills Section */
@@ -1677,14 +1876,13 @@ body {
   width: 40px;
   height: 40px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
 }
 
 .contact-icon-fallback {
   font-size: 1.8rem;
 }
 .contact-card h4 { color:#2c3e50; margin-bottom:10px; font-size:1.2rem; font-weight:600; }
-.contact-card p { color:#5a6c7d; font-size:0.95rem; }
+.contact-card p { color:#f7f8fa; font-size:0.95rem; }
 
 /* Resume Download */
 .resume-download { text-align:center; margin-top:50px; }
@@ -1918,9 +2116,80 @@ body {
 }
 
 .portfolio-header-text {
-  color: #e8eaed;
+  color: #000000;
   font-size: 1rem;
   font-weight: 600;
+}
+
+/* Certificate Modal */
+.cert-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.cert-modal-content {
+  position: relative;
+  margin: 5% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.cert-modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.cert-modal-close {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2001;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.cert-modal-close:hover {
+  background: rgba(255,0,0,0.7);
+  transform: scale(1.1);
+}
+
+.cert-modal-caption {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 5px;
+}
+
+.cert-modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Scrollbar */
@@ -2180,7 +2449,7 @@ body {
 }
 
 .degree {
-  color: #e8eaed;
+  color: #000000;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 8px;
@@ -2214,12 +2483,31 @@ body {
 }
 
 .achievement-list li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 0;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
   color: #e8eaed;
   font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.achievement-list li::before {
+  content: '•';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  color: #34a853;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Light mode for academic honors */
+.light-mode .achievement-list li {
+  color: #374151;
+}
+
+.light-mode .achievement-list li::before {
+  color: #1e40af;
 }
 
 .achievement-icon {
@@ -2260,6 +2548,16 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.cert-badge:hover {
+  transform: scale(1.15);
+  border-color: #1e40af;
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+  z-index: 10;
 }
 
 .cert-fallback {
@@ -2303,7 +2601,7 @@ body {
 }
 
 .cert-details p {
-  color: #9aa0a6;
+  color: #020202;
   margin: 0;
   font-size: 0.85rem;
 }
@@ -2661,7 +2959,7 @@ body {
 }
 
 .role-description {
-  color: #e8eaed;
+  color: #020202;
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -2678,9 +2976,22 @@ body {
 }
 
 .responsibilities li {
-  padding: 6px 0;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
   color: #e8eaed;
   font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.responsibilities li::before {
+  content: '•';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  color: #34a853;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .impact-metrics {
@@ -2715,7 +3026,7 @@ body {
 }
 
 .contact-intro p {
-  color: #9aa0a6;
+  color: #fafdff;
   font-size: 1.1rem;
   line-height: 1.6;
   max-width: 600px;
@@ -2761,7 +3072,7 @@ body {
 }
 
 .contact-info {
-  color: #e8eaed;
+  color: #125dce;
   font-weight: 600;
   font-size: 1rem;
 }
@@ -2912,7 +3223,7 @@ body {
 }
 
 .availability-note {
-  color: #e8eaed;
+  color: #020202;
   line-height: 1.6;
   max-width: 500px;
   margin: 0 auto;

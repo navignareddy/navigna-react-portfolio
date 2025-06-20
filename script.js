@@ -1279,3 +1279,55 @@ function initializeContactInteractions() {
 window.addEventListener('load', () => {
   initializeContactInteractions();
 });
+
+// Certificate Modal Functions
+function openCertModal(imageSrc, imageAlt) {
+  // Prevent the parent anchor link from being triggered
+  event.preventDefault();
+  event.stopPropagation();
+  
+  const modal = document.getElementById('certModal');
+  const modalImage = document.getElementById('certModalImage');
+  const modalCaption = document.getElementById('certModalCaption');
+  
+  if (modal && modalImage && modalCaption) {
+    modalImage.src = imageSrc;
+    modalImage.alt = imageAlt;
+    modalCaption.textContent = imageAlt + ' - Certificate';
+    modal.classList.add('show');
+    
+    // Prevent body scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeCertModal() {
+  const modal = document.getElementById('certModal');
+  
+  if (modal) {
+    modal.classList.remove('show');
+    
+    // Restore body scrolling
+    document.body.style.overflow = '';
+  }
+}
+
+// Close modal when clicking outside the image
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('certModal');
+  
+  if (modal) {
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        closeCertModal();
+      }
+    });
+  }
+  
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeCertModal();
+    }
+  });
+});
