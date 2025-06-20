@@ -986,6 +986,9 @@ function initializeMobileOptimizations() {
   if (isMobile) {
     document.body.classList.add('mobile-device');
     
+    // Add mobile back button for content sections
+    addMobileBackButton();
+    
     // Optimize viewport for iOS
     if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
       document.body.classList.add('ios-device');
@@ -1468,3 +1471,113 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Add mobile back button for better navigation
+function addMobileBackButton() {
+  // Only add on mobile devices
+  if (window.innerWidth > 768) return;
+  
+  // Create mobile back button
+  const backButton = document.createElement('div');
+  backButton.className = 'mobile-back-button';
+  backButton.innerHTML = '← Back to Terminal';
+  backButton.style.cssText = `
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #1e40af;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2000;
+    cursor: pointer;
+    display: none;
+    border: none;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+    transition: all 0.3s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  `;
+  
+  backButton.addEventListener('click', () => {
+    closeAllMobileContent();
+  });
+  
+  // Add touch feedback
+  backButton.addEventListener('touchstart', () => {
+    backButton.style.transform = 'scale(0.95)';
+  });
+  
+  backButton.addEventListener('touchend', () => {
+    backButton.style.transform = 'scale(1)';
+  });
+  
+  document.body.appendChild(backButton);
+  
+  // Store reference globally
+  window.mobileBackButton = backButton;
+}
+
+// Close all mobile content and return to terminal
+function closeAllMobileContent() {
+  // Hide back button
+  if (window.mobileBackButton) {
+    window.mobileBackButton.style.display = 'none';
+  }
+  
+  // Close traditional portfolio
+  const traditionalPortfolio = document.getElementById('traditionalPortfolio');
+  if (traditionalPortfolio && traditionalPortfolio.classList.contains('active')) {
+    closeTraditionalPortfolio();
+  }
+  
+  // Close content sections
+  const contentContainer = document.querySelector('.content-container');
+  if (contentContainer && contentContainer.classList.contains('active')) {
+    closeContent();
+  }
+  
+  // Close AI modal
+  const aiModal = document.getElementById('aiModal');
+  if (aiModal && aiModal.classList.contains('show')) {
+    closeAIChat();
+  }
+  
+  // Close cert modal
+  const certModal = document.getElementById('certModal');
+  if (certModal && certModal.classList.contains('show')) {
+    closeCertModal();
+  }
+}
+
+// Show mobile back button when content is active
+function showMobileBackButton() {
+  if (window.mobileBackButton && window.innerWidth <= 768) {
+    window.mobileBackButton.style.display = 'block';
+  }
+}
+
+// Override existing functions to show back button on mobile
+const originalOpenTraditionalPortfolio = openTraditionalPortfolio;
+const originalShowSection = showSection;
+const originalOpenAIChat = openAIChat;
+
+// Override openTraditionalPortfolio to show back button
+window.openTraditionalPortfolio = function() {
+  originalOpenTraditionalPortfolio();
+  showMobileBackButton();
+};
+
+// Override showSection to show back button
+window.showSection = function(sectionId) {
+  originalShowSection(sectionId);
+  showMobileBackButton();
+};
+
+// Override openAIChat to show back button
+window.openAIChat = function() {
+  originalOpenAIChat();
+  showMobileBackButton();
+};
