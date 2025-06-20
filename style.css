@@ -3171,10 +3171,11 @@ body {
     align-items: center;
     text-align: center;
     gap: 12px;
-    padding: 15px 10px;
+    padding: 15px 10px 30px;
     min-height: auto;
     overflow-y: auto;
     flex: 1;
+    max-height: calc(95vh - 60px);
   }
   
   .left-section {
@@ -3231,10 +3232,54 @@ body {
     max-width: 250px;
     padding: 12px 20px;
     font-size: 0.9rem;
-    margin: 15px auto 0;
+    margin: 15px auto 20px;
     display: block;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(107, 91, 71, 0.3);
+    flex-shrink: 0;
+  }
+
+  /* Mobile Content Scrollbar */
+  .content::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .content::-webkit-scrollbar-track {
+    background: rgba(245, 245, 220, 0.3);
+    border-radius: 4px;
+  }
+  
+  .content::-webkit-scrollbar-thumb {
+    background: rgba(107, 91, 71, 0.6);
+    border-radius: 4px;
+  }
+  
+  .content::-webkit-scrollbar-thumb:hover {
+    background: rgba(107, 91, 71, 0.8);
+  }
+
+  /* Scroll Indicator for Mobile */
+  .start-page {
+    --scroll-indicator-display: block;
+  }
+  
+  .start-page::after {
+    content: "↓ Scroll to explore ↓";
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(107, 91, 71, 0.9);
+    color: #F5F5DC;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    z-index: 10;
+    animation: bounce 2s infinite;
+    pointer-events: none;
+    display: var(--scroll-indicator-display, block);
+    transition: opacity 0.3s ease;
   }
 
   /* Header Mobile */

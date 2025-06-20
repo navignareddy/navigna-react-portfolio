@@ -1588,3 +1588,57 @@ function showMobileBackButton() {
 function showMobileBackButtonOnContentOpen() {
   showMobileBackButton();
 }
+
+// Handle mobile start page scroll indicator
+function initializeMobileScrollIndicator() {
+  if (window.innerWidth <= 480) {
+    const startPage = document.getElementById('startPage');
+    const content = startPage?.querySelector('.content');
+    
+    if (content && startPage) {
+      let scrollIndicatorHidden = false;
+      
+      // Hide scroll indicator when user scrolls
+      content.addEventListener('scroll', function() {
+        if (!scrollIndicatorHidden && this.scrollTop > 20) {
+          startPage.style.setProperty('--scroll-indicator-display', 'none');
+          scrollIndicatorHidden = true;
+        }
+      });
+      
+      // Check if explore button is visible in viewport
+      const exploreBtn = content.querySelector('.explore-btn');
+      if (exploreBtn) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !scrollIndicatorHidden) {
+              startPage.style.setProperty('--scroll-indicator-display', 'none');
+              scrollIndicatorHidden = true;
+            }
+          });
+        }, { 
+          root: content,
+          threshold: 0.1 
+        });
+        
+        observer.observe(exploreBtn);
+      }
+      
+      // Also hide when user interacts with the page
+      content.addEventListener('touchstart', function() {
+        if (!scrollIndicatorHidden) {
+          setTimeout(() => {
+            startPage.style.setProperty('--scroll-indicator-display', 'none');
+            scrollIndicatorHidden = true;
+          }, 1000);
+        }
+      });
+    }
+  }
+}
+
+// Initialize mobile optimizations when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  initializeMobileScrollIndicator();
+  addMobileBackButton();
+});
