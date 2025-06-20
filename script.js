@@ -973,7 +973,141 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     themeIcon.textContent = '🌙';
   }
+
+  // Initialize mobile optimizations
+  initializeMobileOptimizations();
 });
+
+// Mobile-specific optimizations
+function initializeMobileOptimizations() {
+  // Detect mobile device
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    document.body.classList.add('mobile-device');
+    
+    // Optimize viewport for iOS
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+      document.body.classList.add('ios-device');
+    }
+
+    // Add touch event listeners for better mobile interaction
+    const touchElements = document.querySelectorAll('.quick-option, .example-command, .portfolio-card, .content-card');
+    touchElements.forEach(element => {
+      element.addEventListener('touchstart', function() {
+        this.style.opacity = '0.8';
+        this.style.transform = 'scale(0.98)';
+      }, { passive: true });
+      
+      element.addEventListener('touchend', function() {
+        this.style.opacity = '';
+        this.style.transform = '';
+      }, { passive: true });
+      
+      element.addEventListener('touchcancel', function() {
+        this.style.opacity = '';
+        this.style.transform = '';
+      }, { passive: true });
+    });
+
+    // Optimize scrolling for mobile
+    const scrollElements = document.querySelectorAll('.terminal-output, .content-wrapper, .portfolio-content, .ai-chat-body');
+    scrollElements.forEach(element => {
+      if (element) {
+        element.style.webkitOverflowScrolling = 'touch';
+        element.style.scrollBehavior = 'smooth';
+      }
+    });
+
+    // Handle orientation changes
+    let orientationChangeTimeout;
+    window.addEventListener('orientationchange', function() {
+      clearTimeout(orientationChangeTimeout);
+      orientationChangeTimeout = setTimeout(() => {
+        // Force viewport meta tag refresh
+        const viewport = document.querySelector('meta[name=viewport]');
+        if (viewport) {
+          const content = viewport.getAttribute('content');
+          viewport.setAttribute('content', content);
+        }
+        
+        // Trigger layout recalculation
+        window.dispatchEvent(new Event('resize'));
+      }, 500);
+    });
+
+    // Prevent iOS zoom on input focus
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('focus', function() {
+        input.setAttribute('data-original-size', input.style.fontSize || '');
+        input.style.fontSize = '16px';
+      });
+      
+      input.addEventListener('blur', function() {
+        const originalSize = input.getAttribute('data-original-size');
+        if (originalSize) {
+          input.style.fontSize = originalSize;
+        }
+      });
+    });
+
+    // Improve button touch targets
+    const buttons = document.querySelectorAll('button, .quick-option, .example-command, .resume-btn');
+    buttons.forEach(button => {
+      const currentStyle = window.getComputedStyle(button);
+      const currentHeight = parseInt(currentStyle.height);
+      
+      if (currentHeight < 44) {
+        button.style.minHeight = '44px';
+        button.style.display = 'flex';
+        button.style.alignItems = 'center';
+        button.style.justifyContent = 'center';
+      }
+    });
+
+    // Optimize AI modal for mobile
+    const aiModal = document.getElementById('aiModal');
+    if (aiModal) {
+      aiModal.addEventListener('touchmove', function(e) {
+        // Prevent background scrolling when modal is open
+        if (this.classList.contains('show')) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+    }
+
+    // Add haptic feedback for iOS (if supported)
+    if (window.navigator && window.navigator.vibrate) {
+      const feedbackElements = document.querySelectorAll('.quick-option, .example-command, button');
+      feedbackElements.forEach(element => {
+        element.addEventListener('touchstart', function() {
+          navigator.vibrate(10); // Very light haptic feedback
+        }, { passive: true });
+      });
+    }
+  }
+
+  // Handle keyboard visibility on mobile
+  let viewport = document.querySelector('meta[name=viewport]');
+  let isKeyboardOpen = false;
+  
+  window.addEventListener('resize', function() {
+    if (window.innerHeight < window.screen.height * 0.75) {
+      // Keyboard is likely open
+      if (!isKeyboardOpen) {
+        isKeyboardOpen = true;
+        document.body.classList.add('keyboard-open');
+      }
+    } else {
+      // Keyboard is likely closed
+      if (isKeyboardOpen) {
+        isKeyboardOpen = false;
+        document.body.classList.remove('keyboard-open');
+      }
+    }
+  });
+}
 function sendAIMessage() {
   const message = aiInput.value.trim();
   if (!message) return;

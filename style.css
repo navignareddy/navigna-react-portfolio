@@ -1912,105 +1912,10 @@ body {
 .resume-item .meta { color:#1d4ed8; margin-bottom:8px; }
 .resume-item ul { list-style: disc inside; color:#202124; }
 
-/* Responsive */
-@media (max-width: 768px) {
-  /* Start Page Mobile */
-  .start-page {
-    padding: 20px 15px;
-  }
-  
-  .terminal-window {
-    max-width: 95%;
-  }
-  
-  .content {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 25px 20px;
-    min-height: auto;
-  }
-  
-  .left-section {
-    order: 1;
-  }
-  
-  .photo {
-    height: 300px;
-  }
-  
-  .right-section {
-    order: 2;
-    padding: 30px 25px;
-    text-align: center;
-  }
-  
-  .name {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .subtitle, .description {
-    font-size: 1rem;
-    text-align: center;
-  }
-  
-  .explore-btn {
-    width: 100%;
-    margin: 25px 0;
-  }
-  
-    .laptop-emoji {
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-  }
-
-  .mouse-emoji {
-    bottom: 20px;
-    left: 20px;
-    font-size: 1.5rem;
-  }
-}
-
-/* Portfolio Mobile */
-@media (max-width: 768px) {
-  .main-container { flex-direction: column; }
-  .terminal-container.split { width:100%; height:50%; }
-  .content-container.active { width:100%; height:50%; }
-  .terminal-window { margin:8px; }
-  .header { padding:8px 12px; }
-  .header h1 { font-size:1rem; }
-  .quick-options { justify-content:center; }
-  .portfolio-content { padding:40px 20px 60px; }
-  .portfolio-section { margin-bottom:60px; }
-  .portfolio-section h2 { font-size:1.8rem; margin-bottom:35px; }
-  .portfolio-card { padding:25px; }
-  .portfolio-grid.two-col,
-  .portfolio-grid.three-col,
-  .portfolio-grid.four-col { grid-template-columns:1fr; gap:20px; }
-  .profile-name { font-size:2.2rem; }
-  .profile-description { font-size:1rem; }
-  .experience-timeline { padding-left:20px; }
-  .experience-item::before { left:-27px; }
-  
-  /* Skills Section Mobile */
-  .skills-showcase { 
-    grid-template-columns: 1fr; 
-    gap: 20px; 
-  }
-  .skill-category { 
-    min-height: auto; 
-    padding: 20px; 
-  }
-  .skill-header { 
-    flex-direction: column; 
-    align-items: flex-start; 
-    gap: 10px; 
-  }
-  .skill-count { 
-    align-self: flex-start; 
-  }
+/* Legacy Mobile Overrides - Kept for backward compatibility */
+@media (max-width: 769px) and (min-width: 769px) {
+  /* This media query intentionally does nothing to avoid conflicts */
+  /* New comprehensive mobile styles are defined above */
 }
 
 /* Portfolio Access Button */
@@ -3235,48 +3140,844 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Enhancements */
-@media (max-width: 768px) {
-  .education-grid {
-    grid-template-columns: 1fr;
+/* Comprehensive Mobile Responsive Design */
+
+/* Small Mobile Devices (320px - 480px) */
+@media (max-width: 480px) {
+  /* Start Page Mobile Optimization */
+  .start-page {
+    padding: 15px 10px;
+    min-height: 100vh;
   }
   
-  .project-metrics {
+  .terminal-window {
+    max-width: 98%;
+    margin: 0 auto;
+  }
+  
+  .content {
     grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 15px;
+  }
+  
+  .photo {
+    height: 250px;
+    width: 250px;
+    margin: 0 auto;
+  }
+  
+  .photo-caption {
+    font-size: 0.9rem;
+    margin-top: 15px;
+  }
+  
+  .name {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  
+  .explore-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  /* Header Mobile */
+  .header {
+    padding: 8px 15px;
+    flex-wrap: wrap;
     gap: 10px;
   }
   
-  .experience-header {
+  .header h1 {
+    font-size: 0.9rem;
+  }
+  
+  .header-controls {
+    gap: 10px;
+  }
+  
+  .theme-toggle-container {
+    transform: scale(0.9);
+  }
+  
+  .status {
+    font-size: 0.75rem;
+  }
+
+  /* Terminal Mobile Optimization */
+  .main-container {
     flex-direction: column;
-    align-items: flex-start;
+    height: 100vh;
   }
   
-  .impact-metrics {
-    justify-content: center;
-    gap: 20px;
+  .terminal-container {
+    width: 100% !important;
+    height: 50% !important;
+    margin: 0;
   }
   
-  .action-group {
-    flex-direction: column;
-    width: 100%;
+  .terminal-container.split {
+    height: 45% !important;
   }
   
+  .content-container.active {
+    width: 100% !important;
+    height: 55% !important;
+  }
+  
+  .terminal-window {
+    margin: 5px;
+    border-radius: 8px;
+  }
+  
+  .terminal-body {
+    padding: 15px;
+    height: calc(100% - 50px);
+  }
+  
+  .terminal-output {
+    font-size: 13px;
+    max-height: calc(100% - 100px);
+  }
+  
+  .terminal-input {
+    font-size: 13px;
+  }
+  
+  .prompt {
+    font-size: 13px;
+  }
+  
+  .command {
+    font-size: 13px;
+  }
+
+  /* Quick Options Mobile */
+  .quick-options {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .quick-option {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Example Commands Mobile */
+  .examples-section {
+    margin-bottom: 15px;
+  }
+  
+  .example-command {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    margin: 2px 4px 2px 0;
+  }
+
+  /* AI Response Mobile */
+  .ai-response {
+    padding: 12px;
+    margin: 8px 0;
+  }
+  
+  .ai-response .ai-header {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .ai-response .ai-section-title {
+    font-size: 13px;
+  }
+
+  /* Content Section Mobile */
+  .content-wrapper {
+    padding: 15px;
+    padding-top: 45px;
+  }
+  
+  .close-content {
+    top: 10px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+  
+  .section-header {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .content-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .content-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .content-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .content-card li {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+    padding-left: 20px;
+  }
+}
+
+/* Medium Mobile and Small Tablets (481px - 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .photo {
+    height: 280px;
+    width: 280px;
+  }
+  
+  .name {
+    font-size: 2.2rem;
+  }
+  
+  .terminal-body {
+    padding: 18px;
+  }
+  
+  .quick-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .content-wrapper {
+    padding: 18px;
+    padding-top: 50px;
+  }
+}
+
+/* Traditional Portfolio Mobile */
+@media (max-width: 768px) {
+  .traditional-portfolio {
+    padding-top: 0;
+  }
+  
+  .portfolio-header {
+    padding: 12px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .close-traditional {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+  }
+  
+  .portfolio-header-text {
+    font-size: 1rem;
+  }
+  
+  .portfolio-content {
+    padding: 30px 15px 50px;
+  }
+  
+  .portfolio-section {
+    margin-bottom: 40px;
+  }
+  
+  .portfolio-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  /* Profile Section Mobile */
   .profile-intro {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
   }
   
   .profile-picture {
     width: 120px;
     height: 120px;
+    margin: 0 auto;
   }
   
+  .profile-name {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  
+  .profile-title {
+    font-size: 1rem;
+  }
+  
+  .profile-description {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .highlight-badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  /* Stats Grid Mobile */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+  }
+  
+  .stat-card {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .stat-description {
+    font-size: 0.7rem;
+  }
+
+  /* Portfolio Grid Mobile */
+  .portfolio-grid,
+  .portfolio-grid.two-col,
+  .portfolio-grid.three-col,
+  .portfolio-grid.four-col {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .portfolio-card {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .portfolio-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .portfolio-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  /* Education Grid Mobile */
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .education-card,
+  .certifications-card {
+    padding: 20px;
+  }
+  
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .education-period {
+    align-self: flex-start;
+  }
+
+  /* Skills Section Mobile */
+  .skills-showcase {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .skill-category {
+    min-height: auto;
+    padding: 15px;
+  }
+  
+  .skill-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .skill-count {
+    align-self: flex-start;
+  }
+  
+  .skill-tags {
+    gap: 6px;
+  }
+  
+  .skill-tag {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  /* Experience Timeline Mobile */
+  .experience-timeline {
+    padding-left: 15px;
+  }
+  
+  .timeline-item {
+    margin-bottom: 25px;
+  }
+  
+  .timeline-marker {
+    left: -22px;
+  }
+  
+  .marker-dot {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .timeline-content {
+    padding-left: 25px;
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .experience-header h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  .company {
+    font-size: 0.9rem;
+  }
+  
+  .duration {
+    font-size: 0.85rem;
+  }
+  
+  .role-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .responsibilities ul {
+    padding-left: 20px;
+  }
+  
+  .responsibilities li {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    padding-left: 15px;
+  }
+
+  /* Project Features Mobile */
+  .project-metrics {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .metric-item {
+    padding: 10px;
+  }
+  
+  .metric-number {
+    font-size: 1.3rem;
+  }
+  
+  .metric-label {
+    font-size: 0.8rem;
+  }
+  
+  .tech-stack {
+    margin-top: 15px;
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    margin: 2px 4px 2px 0;
+  }
+
+  /* Impact Metrics Mobile */
+  .impact-metrics {
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .impact-item {
+    text-align: center;
+    min-width: 80px;
+  }
+  
+  .impact-number {
+    font-size: 1.2rem;
+  }
+  
+  .impact-label {
+    font-size: 0.75rem;
+  }
+
+  /* Contact Section Mobile */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .contact-card {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .contact-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .contact-link {
+    font-size: 0.9rem;
+  }
+
+  /* Contact Actions Mobile */
+  .action-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+  
+  .resume-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Portfolio Access Button Mobile */
   .portfolio-access-btn {
-    padding: 12px 20px;
+    padding: 12px 18px;
     bottom: 15px;
+    font-size: 0.9rem;
   }
   
   .access-text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  /* AI Modal Mobile */
+  .ai-modal {
+    padding: 15px;
+  }
+  
+  .ai-chat-window {
+    width: 100%;
+    height: 90vh;
+    max-height: 90vh;
+    margin: 0;
+    border-radius: 12px;
+  }
+  
+  .ai-chat-header {
+    padding: 15px 20px;
+  }
+  
+  .ai-chat-body {
+    padding: 15px 20px;
+    height: calc(90vh - 120px);
+  }
+  
+  .ai-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Certificate Modal Mobile */
+  .cert-modal-content {
+    width: 95%;
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  .cert-modal-image {
+    max-height: 60vh;
+  }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .start-page {
+    padding: 10px;
+  }
+  
+  .content {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .photo {
+    height: 200px;
+    width: 200px;
+  }
+  
+  .name {
+    font-size: 1.8rem;
+  }
+  
+  .main-container {
+    flex-direction: row;
+  }
+  
+  .terminal-container.split {
+    width: 50% !important;
+    height: 100% !important;
+  }
+  
+  .content-container.active {
+    width: 50% !important;
+    height: 100% !important;
+  }
+}
+
+/* Touch-friendly enhancements */
+@media (max-width: 768px) {
+  /* Larger touch targets */
+  .quick-option,
+  .example-command,
+  .ai-button,
+  .resume-btn,
+  .close-content,
+  .close-traditional {
+    min-height: 44px; /* iOS recommended touch target size */
+    touch-action: manipulation; /* Prevents zoom on double-tap */
+  }
+  
+  /* Better scrolling on mobile */
+  .terminal-output,
+  .content-wrapper,
+  .portfolio-content,
+  .ai-chat-body {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Remove hover effects on touch devices */
+  .portfolio-card:hover,
+  .content-card:hover,
+  .stat-card:hover,
+  .contact-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Simplified animations for better performance */
+  .timeline-item,
+  .portfolio-card,
+  .content-card {
+    transition: none;
+  }
+}
+
+/* Mobile Device Specific Styles */
+.mobile-device {
+  /* Improve mobile performance */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.mobile-device .terminal-input,
+.mobile-device .ai-input {
+  /* Allow text selection in inputs */
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* iOS Specific Optimizations */
+.ios-device {
+  /* Prevent iOS bounce scroll */
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.ios-device .main-container,
+.ios-device .traditional-portfolio {
+  /* Re-enable scrolling in content areas */
+  position: relative;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Keyboard Open State */
+.keyboard-open .start-page {
+  /* Adjust start page when keyboard is open */
+  padding-top: 20px;
+}
+
+.keyboard-open .terminal-container {
+  /* Optimize terminal layout when keyboard is open */
+  height: 40% !important;
+}
+
+.keyboard-open .content-container.active {
+  height: 60% !important;
+}
+
+.keyboard-open .portfolio-access-btn {
+  /* Hide portfolio button when keyboard is open */
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* High DPI/Retina Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .portfolio-card,
+  .content-card,
+  .stat-card {
+    /* Sharper borders on high-DPI displays */
+    border-width: 0.5px;
+  }
+  
+  .terminal-window {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+}
+
+/* Ultra-wide mobile screens (landscape phones) */
+@media (max-width: 896px) and (orientation: landscape) and (max-height: 414px) {
+  .start-page .content {
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .photo {
+    height: 180px !important;
+    width: 180px !important;
+  }
+  
+  .name {
+    font-size: 1.6rem !important;
+    line-height: 1.1;
+  }
+  
+  .main-container {
+    height: 100vh;
+  }
+  
+  .terminal-container.split {
+    height: 100% !important;
+  }
+  
+  .content-container.active {
+    height: 100% !important;
+  }
+}
+
+/* Foldable/Flexible Display Support */
+@media (spanning: single-fold-vertical) {
+  .main-container {
+    flex-direction: row;
+  }
+  
+  .terminal-container.split {
+    width: 50% !important;
+    height: 100% !important;
+  }
+  
+  .content-container.active {
+    width: 50% !important;
+    height: 100% !important;
+  }
+}
+
+/* Dark mode optimizations for mobile */
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+  .terminal-window {
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+  }
+  
+  .portfolio-card,
+  .content-card {
+    background: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(5px);
+  }
+}
+
+/* Accessibility improvements for mobile */
+@media (max-width: 768px) {
+  /* Larger focus indicators for touch navigation */
+  .quick-option:focus,
+  .example-command:focus,
+  .resume-btn:focus {
+    outline: 3px solid #34a853;
+    outline-offset: 2px;
+  }
+  
+  /* Better contrast for small screens */
+  .ai-response .ai-section-title {
+    font-weight: 700;
+  }
+  
+  .contact-link {
+    text-decoration: underline;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .portfolio-card,
+    .content-card,
+    .stat-card,
+    .timeline-item {
+      transition: none !important;
+      animation: none !important;
+    }
+    
+    .quick-option:hover,
+    .example-command:hover {
+      transform: none !important;
+    }
   }
 }
