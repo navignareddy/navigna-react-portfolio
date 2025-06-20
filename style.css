@@ -3148,17 +3148,21 @@ body {
   /* Start Page Mobile Optimization */
   .start-page {
     padding: 10px;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
   
   .terminal-window {
+    width: 95%;
     max-width: 95%;
     margin: 0 auto;
-    max-height: 90vh;
+    max-height: 95vh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
   
   .content {
@@ -3168,6 +3172,9 @@ body {
     text-align: center;
     gap: 12px;
     padding: 15px 10px;
+    min-height: auto;
+    overflow-y: auto;
+    flex: 1;
   }
   
   .left-section {
@@ -3222,9 +3229,12 @@ body {
   .explore-btn {
     width: 85%;
     max-width: 250px;
-    padding: 10px 16px;
-    font-size: 0.85rem;
-    margin: 0 auto;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    margin: 15px auto 0;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(107, 91, 71, 0.3);
   }
 
   /* Header Mobile */
@@ -4171,3 +4181,5 @@ body {
     }
   }
 }
+
+
