@@ -760,13 +760,14 @@ const commands = {
   ls: () => {
     return `📂 Portfolio Sections:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📖 about/      Personal & professional summary
-🎓 education/  Academic achievements & certifications
-🛠️ skills/     Technical expertise matrix
-💻 projects/   Featured development projects
-💼 experience/ Professional work history
-🏛️ leadership/ Organizations & leadership roles
-📞 contact/    Availability & contact info
+📖 about/         Personal & professional summary
+🎓 education/     Academic achievements & certifications
+🛠️ skills/        Technical expertise matrix
+💻 projects/      Featured development projects
+💼 experience/    Professional work history
+🏛️ leadership/    Organizations & leadership roles
+🏢 organizations/ Detailed organizational involvement
+📞 contact/       Availability & contact info
 
 🤖 AI Commands: ai [query] for intelligent analysis`;
   },
@@ -776,6 +777,7 @@ const commands = {
   'cd projects': () => { showSection('projects'); return '💻 AI project portfolio...'; },
   'cd experience': () => { showSection('experience'); return '💼 Professional timeline...'; },
   'cd leadership': () => { showSection('leadership'); return '🏛️ Leadership & organizations...'; },
+  'cd organizations': () => { showSection('organizations'); return '🏢 Organizational involvement...'; },
   'cd contact': () => { showSection('contact'); return '📞 Contact information...'; },
       clear: () => { 
       // Only clear dynamic terminal output, preserve welcome message and static elements
