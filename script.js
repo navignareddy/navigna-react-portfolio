@@ -756,6 +756,7 @@ const commands = {
   },
   start: () => { showResume(); return '🚀 Opening professional resume...'; },
   portfolio: () => { openTraditionalPortfolio(); return '📄 Opening traditional portfolio view...'; },
+  chat: () => { openAIChat(); return '🤖 Opening AI chatbot interface...'; },
   ls: () => {
     return `📂 Portfolio Sections:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1007,7 +1008,7 @@ aiModal.addEventListener('click', e => {
 // These functions are now defined below with enhanced functionality
 function downloadResume() {
   // Link to the actual resume PDF
-  window.open('https://docs.google.com/document/d/1dPYONY_o3NWheQMsZnYy4uwJZHJ_ktWs/edit?usp=sharing&ouid=113037602875858214346&rtpof=true&sd=true', '_blank');
+  window.open('Navigna Reddy- CV.docx.pdf', '_blank');
 }
 
 // Portfolio access is now purely click-based
