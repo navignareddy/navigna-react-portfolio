@@ -739,7 +739,7 @@ const commands = {
     return `🤖 Advanced AI Portfolio System Commands:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📁 Navigation:
-   start              → Open resume
+   start              → Download resume PDF
    ls                 → List sections  
    cd [section]       → Navigate to section
    
@@ -754,7 +754,7 @@ const commands = {
    clear, whoami, pwd, date
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
   },
-  start: () => { showResume(); return '🚀 Opening professional resume...'; },
+  start: () => { downloadResume(); return '📄 Downloading resume PDF...'; },
   portfolio: () => { openTraditionalPortfolio(); return '📄 Opening traditional portfolio view...'; },
   chat: () => { openAIChat(); return '🤖 Opening AI chatbot interface...'; },
   ls: () => {
