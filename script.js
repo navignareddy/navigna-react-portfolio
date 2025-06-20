@@ -1007,8 +1007,8 @@ aiModal.addEventListener('click', e => {
 // Traditional portfolio toggles & download
 // These functions are now defined below with enhanced functionality
 function downloadResume() {
-  // Link to the actual resume PDF
-  window.open('Navigna Reddy- CV.docx.pdf', '_blank');
+  // Use the web-friendly filename without spaces
+  window.open('Navigna_Reddy_CV.pdf', '_blank');
 }
 
 // Portfolio access is now purely click-based
