@@ -829,6 +829,9 @@ function showSection(sectionId) {
   contentContainer.classList.add('active');
   document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
   document.getElementById(sectionId).classList.add('active');
+  
+  // Show mobile back button if on mobile
+  showMobileBackButton();
 }
 function showResume() {
   closeContent();
@@ -838,6 +841,11 @@ function closeContent() {
   terminalContainer.classList.remove('split');
   contentContainer.classList.remove('active');
   document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  
+  // Hide mobile back button
+  if (window.mobileBackButton && window.innerWidth <= 768) {
+    window.mobileBackButton.style.display = 'none';
+  }
 }
 function closeResume() {
   document.getElementById('resume').classList.remove('active');
@@ -919,6 +927,10 @@ input.addEventListener('keypress', e => {
 function openAIChat() {
   aiModal.classList.add('show');
   aiInput.focus();
+  
+  // Show mobile back button if on mobile
+  showMobileBackButton();
+  
   // Hide the helper bubble when chatbot is opened
   const helper = document.getElementById('chatbotHelper');
   if (helper) {
@@ -928,6 +940,11 @@ function openAIChat() {
 function closeAIChat() {
   aiModal.classList.remove('show');
   input.focus();
+  
+  // Hide mobile back button
+  if (window.mobileBackButton && window.innerWidth <= 768) {
+    window.mobileBackButton.style.display = 'none';
+  }
 }
 
 function closeChatbotHelper() {
@@ -1280,6 +1297,9 @@ function openTraditionalPortfolio() {
     // Hide the portfolio access button
     hidePortfolioButton();
     
+    // Show mobile back button if on mobile
+    showMobileBackButton();
+    
     // Trigger animations after portfolio opens
     setTimeout(() => {
       animateCounters();
@@ -1294,6 +1314,11 @@ function closeTraditionalPortfolio() {
   if (portfolio) {
     portfolio.classList.remove('active');
     document.body.style.overflow = 'auto';
+    
+    // Hide mobile back button
+    if (window.mobileBackButton && window.innerWidth <= 768) {
+      window.mobileBackButton.style.display = 'none';
+    }
     
     // Show the portfolio access button again
     showPortfolioButton();
@@ -1559,25 +1584,7 @@ function showMobileBackButton() {
   }
 }
 
-// Override existing functions to show back button on mobile
-const originalOpenTraditionalPortfolio = openTraditionalPortfolio;
-const originalShowSection = showSection;
-const originalOpenAIChat = openAIChat;
-
-// Override openTraditionalPortfolio to show back button
-window.openTraditionalPortfolio = function() {
-  originalOpenTraditionalPortfolio();
+// Update existing functions to show back button on mobile
+function showMobileBackButtonOnContentOpen() {
   showMobileBackButton();
-};
-
-// Override showSection to show back button
-window.showSection = function(sectionId) {
-  originalShowSection(sectionId);
-  showMobileBackButton();
-};
-
-// Override openAIChat to show back button
-window.openAIChat = function() {
-  originalOpenAIChat();
-  showMobileBackButton();
-};
+}
