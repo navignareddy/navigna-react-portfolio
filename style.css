@@ -3146,52 +3146,84 @@ body {
 @media (max-width: 480px) {
   /* Start Page Mobile Optimization */
   .start-page {
-    padding: 15px 10px;
+    padding: 10px;
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .terminal-window {
-    max-width: 98%;
+    max-width: 95%;
     margin: 0 auto;
+    max-height: 90vh;
+    overflow: hidden;
   }
   
   .content {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 15px 10px;
+  }
+  
+  .left-section {
+    width: 100%;
+    order: 1;
+  }
+  
+  .right-section {
+    width: 100%;
+    order: 2;
+  }
+  
+  .photo-container {
+    margin-bottom: 10px;
   }
   
   .photo {
-    height: 250px;
-    width: 250px;
+    height: 160px;
+    width: 160px;
     margin: 0 auto;
   }
   
   .photo-caption {
-    font-size: 0.9rem;
-    margin-top: 15px;
+    font-size: 0.75rem;
+    margin-top: 6px;
+    text-align: center;
   }
   
   .name {
-    font-size: 2rem;
+    font-size: 1.4rem;
     line-height: 1.2;
-    margin-bottom: 15px;
+    margin-bottom: 6px;
+    text-align: center;
   }
   
   .subtitle {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+    text-align: center;
   }
   
   .description {
-    font-size: 0.85rem;
-    margin-bottom: 20px;
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+    text-align: center;
+    line-height: 1.3;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .explore-btn {
-    width: 100%;
-    padding: 15px;
-    font-size: 1rem;
+    width: 85%;
+    max-width: 250px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    margin: 0 auto;
   }
 
   /* Header Mobile */
@@ -3366,13 +3398,78 @@ body {
 
 /* Medium Mobile and Small Tablets (481px - 768px) */
 @media (max-width: 768px) and (min-width: 481px) {
+  /* Start Page Medium Mobile */
+  .start-page {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .terminal-window {
+    max-width: 90%;
+    max-height: 85vh;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    padding: 20px 15px;
+  }
+  
+  .left-section {
+    width: 100%;
+    order: 1;
+  }
+  
+  .right-section {
+    width: 100%;
+    order: 2;
+  }
+  
   .photo {
-    height: 280px;
-    width: 280px;
+    height: 220px;
+    width: 220px;
+    margin: 0 auto;
+  }
+  
+  .photo-caption {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
   }
   
   .name {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .explore-btn {
+    width: 80%;
+    max-width: 300px;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    margin: 0 auto;
   }
   
   .terminal-body {
