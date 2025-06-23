@@ -1163,8 +1163,8 @@ aiModal.addEventListener('click', e => {
 // Traditional portfolio toggles & download
 // These functions are now defined below with enhanced functionality
 function downloadResume() {
-  // Use the web-friendly filename without spaces
-  window.open('Navigna_Reddy_CV.pdf', '_blank');
+  // Use the correct filename 
+  window.open('NavignaReddy.pdf', '_blank');
 }
 
 // Portfolio access is now purely click-based
