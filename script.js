@@ -179,6 +179,29 @@ function generateAdvancedAIResponse(query) {
     `;
   }
 
+  // Research questions
+  if (q.includes('research') || q.includes('publication') || q.includes('academic research') || q.includes('papers')) {
+    return `
+      <div class="ai-header">🔬 Navigna's Research Experience</div>
+      
+      <div class="ai-section">
+        <div class="ai-section-title">🧮 Probabilistic Circuits Research</div>
+        <div class="ai-metric">Nov 2024 - May 2025 | Independent Research</div>
+        <div class="ai-metric">85% prediction accuracy with 60% feature reduction</div>
+        <div class="ai-metric">40% authentication efficiency improvement</div>
+        <br>Developed <span class="ai-highlight">probabilistic frameworks with mathematical guarantees</span> for feature selection in generative models using Julia programming.
+      </div>
+
+      <div class="ai-section">
+        <div class="ai-section-title">🤖 SocialLens: Multi-Agent System</div>
+        <div class="ai-metric">Jun 2024 - Sep 2024 | Research Project</div>
+        <div class="ai-metric">92% misinformation detection accuracy</div>
+        <div class="ai-metric">Processing 10,000+ interactions/hour</div>
+        <br>Built multi-agent system using <span class="ai-highlight">LangChain and CrewAI</span> for social media debate analysis and moderation.
+      </div>
+    `;
+  }
+
   // Experience/work questions
   if (q.includes('experience') || q.includes('work') || q.includes('job') || q.includes('internship') || q.includes('teaching')) {
     return `
@@ -765,6 +788,7 @@ const commands = {
 🛠️ skills/        Technical expertise matrix
 💻 projects/      Featured development projects
 💼 experience/    Professional work history
+🔬 research/      Research projects & publications
 🏛️ leadership/    Organizations & leadership roles
 🏢 organizations/ Detailed organizational involvement
 📞 contact/       Availability & contact info
@@ -776,6 +800,7 @@ const commands = {
   'cd skills': () => { showSection('skills'); return '🛠️ Technical skill matrix...'; },
   'cd projects': () => { showSection('projects'); return '💻 AI project portfolio...'; },
   'cd experience': () => { showSection('experience'); return '💼 Professional timeline...'; },
+  'cd research': () => { showSection('research'); return '🔬 Research projects & findings...'; },
   'cd leadership': () => { showSection('leadership'); return '🏛️ Leadership & organizations...'; },
   'cd organizations': () => { showSection('organizations'); return '🏢 Organizational involvement...'; },
   'cd contact': () => { showSection('contact'); return '📞 Contact information...'; },
